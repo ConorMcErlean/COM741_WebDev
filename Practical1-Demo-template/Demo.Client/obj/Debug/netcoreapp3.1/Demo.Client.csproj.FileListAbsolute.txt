@@ -1,0 +1,11 @@
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\bin\Debug\netcoreapp3.1\Demo.Client.exe
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\bin\Debug\netcoreapp3.1\Demo.Client.deps.json
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\bin\Debug\netcoreapp3.1\Demo.Client.runtimeconfig.json
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\bin\Debug\netcoreapp3.1\Demo.Client.runtimeconfig.dev.json
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\bin\Debug\netcoreapp3.1\Demo.Client.dll
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\bin\Debug\netcoreapp3.1\Demo.Client.pdb
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\obj\Debug\netcoreapp3.1\Demo.Client.csprojAssemblyReference.cache
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\obj\Debug\netcoreapp3.1\Demo.Client.AssemblyInfoInputs.cache
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\obj\Debug\netcoreapp3.1\Demo.Client.AssemblyInfo.cs
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\obj\Debug\netcoreapp3.1\Demo.Client.dll
+C:\Users\pg19mec\Documents\WebDev\Practical1-Demo-template\Demo.Client\obj\Debug\netcoreapp3.1\Demo.Client.pdb
