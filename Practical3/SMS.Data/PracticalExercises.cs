@@ -113,7 +113,19 @@ namespace SMS.Data
         // Q6 - Test method to verify operation of Updating a student
         public void TestUpdateStudent()
         {
+            /* 
+            For reasons unknown to me, the below Seed() call causes an issue
+            of accessing the same item twice:
+
+            System.InvalidOperationException: The instance of entity type 
+            'Student' cannot be tracked because another instance with the same 
+            key value for {'Id'} is already being tracked. When attaching 
+            existing entities, ensure that only one entity instance with a 
+            given key value is attached...
+            */
+
             // Seed();
+
             // retrieve student 1 “Homer” 
             var homer = GetStudentByName("Homer");
             
