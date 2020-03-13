@@ -12,33 +12,33 @@ namespace SMS.Data
             sm.Seed();
 
             // Q1
-            //sm.StudentsWithProfile();
+            // sm.StudentsWithProfile();
 
             // Q2
-            //sm.StudentsFailing(); 
+            // sm.StudentsFailing(); 
 
             // Q3
-            //sm.AdultStudentsPassing(); 
-            //sm.AdultStudentsPassingProjection(); 
+            // sm.AdultStudentsPassing(); 
+            // sm.AdultStudentsPassingProjection(); 
 
             // Q4
-            //sm.TicketsWithStudent(); // 3 tickets
+            // sm.TicketsWithStudent(); // 3 tickets
 
             // Q5
-            //sm.ActiveTicketsWithStudent(); 
-            //sm.ActiveTicketsWithStudentProjection(); 
+            // sm.ActiveTicketsWithStudent(); 
+            // sm.ActiveTicketsWithStudentProjection(); 
 
             // Q6
-            //sm.ActiveTicketsBeforeDate( new DateTime(2020,2,23) ); 
+            // sm.ActiveTicketsBeforeDate( new DateTime(2020,2,23) ); 
 
             // Q7
-            //sm.AllStudentModulesOrderedByStudent();
+            // sm.AllStudentModulesOrderedByStudent();
 
             // Q8
-            //sm.ModulesTakenByStudent("Lisa"); 
+            // sm.ModulesTakenByStudent("Lisa"); 
 
             // Q9
-            //sm.StudentsTakingModule("Programming");
+            sm.StudentsTakingModule("Programming");
 
         }
 
