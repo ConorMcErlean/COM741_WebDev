@@ -175,11 +175,15 @@ namespace SMS.Test
         public void AddStudent_WhenDuplicate_ShouldReturnNull()
         {
             // arrange
+            var s = svc.AddStudent("XXX", "xxx@email.com", "Computing", 20, 0);
             
             // act 
+            var s2 = svc.AddStudent("XXX", "xxx@email.com", "Computing", 20, 0);
     
             // assert
-
+            Assert.NotNull(s);
+            Assert.Null(s2);
+            
         }
         
 
@@ -187,11 +191,16 @@ namespace SMS.Test
         public void AddStudentToModule_WhenAlreadyTakingModule_ShouldReturNull()
         {
             // arrange
-           
-            // act
+            var s = svc.AddStudent("XXX", "xxx@email.com", "Computing", 20, 0);
+            var m = svc.AddModule("Geography");
 
-            // assert
+            // act
+            var sm1 = svc.AddStudentToModule(s.Id, m.Id);
+            var sm2 = svc.AddStudentToModule(s.Id, m.Id);  
             
+            // assert
+            Assert.NotNull(sm1);
+            Assert.Null(sm2);
         }
 
        
@@ -200,10 +209,17 @@ namespace SMS.Test
         public void CloseTicket_ForAlreadyClosedTicket_ShouldReturnNull()
         {
             // arrange
+            var s = svc.AddStudent("XXX", "xxx@email.com", "Computing", 20, 0);
+            var t = svc.CreateTicket(s.Id, "Test Failed");
          
             // act
+            var t1 = svc.CloseTicket(t.Id);
+            var t2 = svc.CloseTicket(t.Id);
            
-           // assert
+            // assert
+            Assert.NotNull(t1);
+            Assert.False(t1.Active);
+            Assert.Null(t2);
             
         }
 
@@ -213,10 +229,19 @@ namespace SMS.Test
         public void RecalculateStudentGrade_WhenModuleMarksUpdated_ShouldWork()
         {
             // arrange
-           
+            var s = svc.AddStudent("XXX", "xxx@email.com", "Computing", 20, 0);
+            var m1 = svc.AddModule("Geography");
+            var m2 = svc.AddModule("Programming");
+            var sm1 = svc.AddStudentToModule(s.Id, m1.Id);
+            var sm2 = svc.AddStudentToModule(s.Id, m2.Id);
             // act
+            sm1 = svc.UpdateStudentModuleMark(s.Id, m1.Id, 50);
+            sm2 = svc.UpdateStudentModuleMark(s.Id, m2.Id, 60);
+            s = svc.RecalculateStudentGrade(s.Id);
+            var expected = 55;
             
             // assert
+            Assert.Equal(expected, s.Profile.Grade);
            
         }
               

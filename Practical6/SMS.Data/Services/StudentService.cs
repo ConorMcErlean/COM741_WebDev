@@ -49,7 +49,12 @@ namespace SMS.Data.Services
         public Student AddStudent(string name, string email, string course, int age, double grade)
         {
             // Q1 - verify that a student with same email does not exist 
-   
+            var student = db.Students.FirstOrDefault
+            (s => s.Email == email);
+            if (student != null)
+            {
+                return null;
+            }
 
             var s = new Student
             {
@@ -98,19 +103,30 @@ namespace SMS.Data.Services
         public Student RecalculateStudentGrade(int studentId)
         {
             // retrieve the student identified by studentId
-            
+            var s = db.Students.FirstOrDefault(s => s.Id == studentId);
             // check the student exists
-            
+            if (s == null)
+            {
+                return null;
+            }
             // calculate sum of module marks and count number of modules
-    
+            var total = db.StudentModules.Where(m => m.StudentId == studentId)
+                                        .Sum(m => m.Mark);
+            var count = db.StudentModules.Where(m => m.StudentId == studentId)
+                                        .Count();
 
             // set the student Profile Grade with average of module grades or 0 if no modules
-    
+            var average = 0.0;
+            if (count != 0)
+            {
+                average = total/count;
+            }
+            s.Profile.Grade = average;
             // save the changes
+            db.SaveChanges();
    
-
             // return the updated student
-            return null;
+            return s;
         }
 
 
