@@ -70,6 +70,10 @@ namespace SMS.Data
             // 4. Using the CloseTicket service method, close Homers ticket and then verify that its closed
             var t = svc.CloseTicket(t1.Id);
             Test(t.Active == false, "CloseTicket()");
+
+                var fob = 4.ToString();
+                Console.WriteLine(fob);
+        
         }
 
         // Pass boolean expression to test as first parameter and name of test (string)
@@ -87,6 +91,8 @@ namespace SMS.Data
                 Console.WriteLine("FAILED: " + message);
             }
         }
+
+    
 
     }
 }
