@@ -1,0 +1,15 @@
+body{
+    background-color: aqua;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14;
+    margin: 40px;
+}
+.custom{
+    background-color: aqua;
+    font-family:'Courier New', Courier, monospace;
+    font-size: 16;
+    color: cadetblue;
+}
+.row{
+    margin-top: 5px;
+}
