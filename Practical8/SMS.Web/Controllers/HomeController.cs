@@ -20,7 +20,11 @@ namespace SMS.Web.Controllers
 
         public IActionResult Index()
         {
-              return View();
+            var date = DateTime.Now.ToShortDateString();
+            var message = "Wow! We are learning how to do things!";
+            ViewBag.Date = date;
+            ViewBag.Message =message;
+            return View();
         }
 
         public IActionResult Privacy()
@@ -32,6 +36,14 @@ namespace SMS.Web.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+
+        public IActionResult About()
+        {
+            var A = new AboutViewModel();
+            A.Title = "New Thing about a Thing";
+            A.Formed= new DateTime(2019, 1, 1);
+            return View(A);
         }
     }
 }
