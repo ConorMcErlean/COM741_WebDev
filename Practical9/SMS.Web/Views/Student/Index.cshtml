@@ -1,0 +1,36 @@
+﻿@model IList<Student>
+
+<h3>Student List</h3>
+
+<div class="mt-4 mb-4">
+   <!-- add an action link styled as a button to navigate to Create Action -->
+   <a asp-action="Create" class="btn btn-primary">Create Student</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Course</th>
+            <th>Age</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var s in Model) {
+            <tr>
+                <td>@s.Id</td>
+                <td>@s.Name</td>
+                <td>@s.Course</td>
+                <td>@s.Age</td>
+                <td><a asp-action="Details" asp-route-id=@s.Id>View</a>  
+                    <!-- Q3 Add edit link  -->
+                   
+                    <!-- Q5d optional add delete link -->
+                   
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

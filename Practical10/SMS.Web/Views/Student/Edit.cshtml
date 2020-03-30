@@ -1,0 +1,51 @@
+@model Student
+
+<h3 class="mt-4 mb-4">Edit Student</h3>
+
+<!-- Q4a - add a form to edit the student details -->
+
+<form asp-action="Edit">
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <!-- we hide the id as its not user editable but needs to be in the -->
+    <!-- form to ensure the student passed to the controller is complete -->    
+    <input type="hidden" asp-for="Id" class="form-control"/>
+
+    <!-- add form groups for each student attributed being edited -->
+    <div class="form-group">
+        <label asp-for="Name" class="control-label"></label>
+        <input asp-for="Name" class="form-control"/>
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Course" class="control-label"></label>
+        <input asp-for="Course" class="form-control"/>
+        <span asp-validation-for="Course" class="text-danger"></span>
+    </div>
+
+    <!-- age / email row -->
+    <div class="row">
+        <div class="form-group col-4">
+            <label asp-for="Age" class="control-label"></label>
+            <input asp-for="Age" class="form-control"/>
+            <span asp-validation-for="Age" class="text-danger"></span>
+        </div>
+
+        <div class="form-group col-8">
+            <label asp-for="Email" class="control-label"></label>
+            <input asp-for="Email" class="form-control"/>
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
+    </div>
+    
+    <!-- add a form group with submit button and cancel link which navigates to Display action -->
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-primary"/>
+        <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+    </div>
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

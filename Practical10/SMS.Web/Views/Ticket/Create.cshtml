@@ -1,0 +1,29 @@
+@model TicketViewModel
+
+<h3 class="mt-4 mb-4">Create Ticket</h3>
+
+<form asp-action="CreateTicket">
+
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+    <!-- add form group for StudentId            -->
+    <!--     a label for StudentId               -->
+    <!--     a select list to populate StudentId -->
+    <!--     a validation span for StudentId     -->
+
+    <!-- add a form group for Issue              -->
+    <!--     a label for Issue                   -->
+    <!--     a textarea 5 rows for Issue         -->
+    <!--     a validation span for Issue         -->
+   
+    <div class="form-group">
+        <input type="submit" value="Create" class="btn btn-primary"/>
+        <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+    </div>
+
+</form>
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
