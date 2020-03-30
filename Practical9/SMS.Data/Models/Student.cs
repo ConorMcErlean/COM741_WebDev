@@ -27,12 +27,17 @@ namespace SMS.Data.Models
         // Name, Course, Email are required
         // Email should be a valid EmailAddress
         // Age should be in range 16-80
+        [Required]
         public string Name { get; set; }
         
+        [Required]
         public string Course { get; set; }
         
+        [Range(16,80)]
         public int Age { get; set; }
 
+        [Required]
+        [EmailAddress]
         public string Email { get; set; }
 
 

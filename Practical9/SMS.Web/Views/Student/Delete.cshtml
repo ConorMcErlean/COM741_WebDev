@@ -6,13 +6,37 @@
 
 <div>
     <!-- display the student using a <dl> as per Details.cshtml -->
-   
+    <dl class="row">
+        <dt class="col-sm-3">Name</dt>
+        <dd class="col-sm-9">@Model.Name</dd>
+
+        <dt class="col-sm-3">Course</dt>
+        <dd class="col-sm-9">@Model.Course</dd>
+
+        <dt class="col-sm-3">Age</dt>
+        <dd class="col-sm-9">@Model.Age</dd>
+
+        <dt class="col-sm-3">Email</dt>
+        <dd class="col-sm-9">@Model.Email</dd>
 
     <!-- create a form to submit post request to DeleteConfirm action  
          student Id should be a hidden input field named 'Id" in the form       
          add type submit input button                                   
          add cancel link which calls Index action                   
      -->
-    
+
+        <form asp-action="DeleteConfirm">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" class="form-control"/>
+
+            <!-- Buttons -->
+            <div class="form-group">
+                <input type="submit" value="Delete" class="btn btn-primary"/>
+                <a class="btn btn-secondary" asp-action="Index">Cancel</a>
+
+            </div>
+
+        </form>
+    </dl>
 </div>
 

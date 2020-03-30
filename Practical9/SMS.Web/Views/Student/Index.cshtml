@@ -24,10 +24,11 @@
                 <td>@s.Name</td>
                 <td>@s.Course</td>
                 <td>@s.Age</td>
-                <td><a asp-action="Details" asp-route-id=@s.Id>View</a>  
+                <td><a asp-action="Details" asp-route-id=@s.Id>View</a>  |
                     <!-- Q3 Add edit link  -->
-                   
+                    <a asp-action="Edit" asp-route-id=@s.Id>Edit</a> |
                     <!-- Q5d optional add delete link -->
+                    <a asp-action="Delete" asp-route-id=@s.Id>Delete</a>
                    
                 </td>
             </tr>

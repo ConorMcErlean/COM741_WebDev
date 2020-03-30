@@ -50,10 +50,14 @@ namespace SMS.Web.Controllers
         {
             // Q2c - complete POST action to add student
             // if model is valid 
-            //    pass data to service to store
-            //    return RedirectToAction(nameof(Index));
-            // end
- 
+            if (ModelState.IsValid)
+            {
+                //    pass data to service to store
+                var saved = svc.AddStudent(s.Name, s.Email, s.Course, s.Age, s.Profile.Grade);
+                // Redirect to index URL
+                return RedirectToAction(nameof(Details), new {Id = saved.Id});
+                // end
+            }
             // redisplay the form for editing as there are validation errors
             return View(s);
         }
@@ -63,11 +67,12 @@ namespace SMS.Web.Controllers
         {
             // Q4b
             // load the student using the service
-      
+            var student = svc.GetStudent(id);
             // check the returned student is not null and if so return NotFound()
-        
+            if (student == null)
+            {return NotFound();}
             // pass student to view for editing
-            return View( );
+            return View(student);
         }
 
         // POST /student/edit/{id}
@@ -76,10 +81,13 @@ namespace SMS.Web.Controllers
         {
             // Q4c 
             // if check model is valid (look at how Create works)
-            //    update student via service
-            //    return RedirectToAction(nameof(Index));
-            // end
-
+            if (ModelState.IsValid)
+            {
+                //    update student via service
+                svc.UpdateStudent(id, s);
+                return RedirectToAction(nameof(Index));
+                // end
+            }   
             // redisplay the form for editing as validation errors
             return View(s);
         }
@@ -89,11 +97,14 @@ namespace SMS.Web.Controllers
         {
             // Q5b
             // load student via service  
+            var byebye = svc.GetStudent(id);
 
-            // check student not null and if so return NotFound()       
+            // check student not null and if so return NotFound()   
+            if (byebye == null)
+            {return NotFound();}    
             
             // pass student to view for deletion confirmation
-            return View();
+            return View(byebye);
         }
 
         // POST /student/delete/{id}
@@ -102,7 +113,7 @@ namespace SMS.Web.Controllers
         {
             //Q5c
             // delete student via service
-           
+            var result = svc.DeleteStudent(id);
          
             // redirect to the index view
             return RedirectToAction(nameof(Index));

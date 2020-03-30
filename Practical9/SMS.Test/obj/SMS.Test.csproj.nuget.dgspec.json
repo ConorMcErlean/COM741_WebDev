@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\SMS.Test.csproj": {}
+    "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\SMS.Test.csproj": {}
   },
   "projects": {
-    "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj": {
+    "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj",
+        "projectUniqueName": "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj",
         "projectName": "SMS.Data",
-        "projectPath": "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj",
+        "projectPath": "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj",
         "packagesPath": "C:\\Users\\Confu\\.nuget\\packages\\",
-        "outputPath": "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\obj\\",
+        "outputPath": "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Confu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -74,14 +74,14 @@
         }
       }
     },
-    "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\SMS.Test.csproj": {
+    "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\SMS.Test.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\SMS.Test.csproj",
+        "projectUniqueName": "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\SMS.Test.csproj",
         "projectName": "SMS.Test",
-        "projectPath": "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\SMS.Test.csproj",
+        "projectPath": "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\SMS.Test.csproj",
         "packagesPath": "C:\\Users\\Confu\\.nuget\\packages\\",
-        "outputPath": "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\obj\\",
+        "outputPath": "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Test\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\Confu\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -97,8 +97,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj": {
-                "projectPath": "d:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj"
+              "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj": {
+                "projectPath": "D:\\Work\\WebDev\\COM741_WebDev\\Practical9\\SMS.Data\\SMS.Data.csproj"
               }
             }
           }
