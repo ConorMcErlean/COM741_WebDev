@@ -7,7 +7,7 @@ using SMS.Data.Services;
 
 namespace SMS.Web.Controllers
 {
-    public class StudentController : Controller
+    public class StudentController : BaseController
     {
         private readonly StudentService svc;
         public StudentController()
@@ -28,7 +28,8 @@ namespace SMS.Web.Controllers
             var student = svc.GetStudent(id);
             if (student == null)
             {
-                return NotFound();
+                Alert("Student Was Not Found", AlertType.danger);
+                return RedirectToAction(nameof(Index));
             }
 
             return View(student);
@@ -71,7 +72,8 @@ namespace SMS.Web.Controllers
             // check the returned student is not null and if so return NotFound()
             if (s == null)
             {
-                return NotFound();
+                Alert("Student Was Not Found", AlertType.danger);
+                return RedirectToAction(nameof(Index));
             }
             
             // pass student to view for editing
@@ -101,7 +103,8 @@ namespace SMS.Web.Controllers
             var student = svc.GetStudent(id);
             if (student == null)
             {
-                return NotFound();
+                Alert("Student Was Not Found", AlertType.danger);
+                return RedirectToAction(nameof(Index));
             }
             // pass student to view for deletion confirmation
             return View(student);
@@ -129,7 +132,8 @@ namespace SMS.Web.Controllers
 
             // verify student found and if not return NotFound()
             if (s == null){
-                return NotFound();
+                Alert("Student Was Not Found", AlertType.danger);
+                return RedirectToAction(nameof(Index));
             }
             // create a ticket view model and set StudentId foreign key to parameter value id
             var tvm = new TicketViewModel{
