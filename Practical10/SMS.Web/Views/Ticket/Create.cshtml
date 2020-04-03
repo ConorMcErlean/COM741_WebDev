@@ -8,22 +8,23 @@
 
     <!-- add form group for StudentId            -->
     <div class="form-group">
-    <!--     a label for StudentId               -->
+        <!--     a label for StudentId               -->
         <label asp-for="StudentId" class="control-label"></label>
-    <!--     a select list to populate StudentId -->
+        <!--     a select list to populate StudentId -->
         <select asp-for="StudentId" class="form-control" asp-items="@Model.Students">
             <option>Select Student</option>
         </select>
-    <!--     a validation span for StudentId     -->
+        <!--     a validation span for StudentId     -->
         <span asp-validation-for="StudentId" class="text-danger"></span>
     </div>
+
     <!-- add a form group for Issue              -->
     <div class="form-group">
-    <!--     a label for Issue                   -->
+        <!--     a label for Issue                   -->
         <label asp-for="Issue" class="control-label"></label>
-    <!--     a textarea 5 rows for Issue         -->
+        <!--     a textarea 5 rows for Issue         -->
         <textarea rows="5" asp-for="Issue" class="form-control"></textarea>
-    <!--     a validation span for Issue         -->
+        <!--     a validation span for Issue         -->
         <span asp-validation-for="Issue" class="text-danger"></span>
      </div>
    

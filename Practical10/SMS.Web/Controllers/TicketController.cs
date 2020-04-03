@@ -61,7 +61,7 @@ namespace SMS.Web.Controllers
 
         // POST /ticket/create
         [HttpPost]
-        public IActionResult Create(TicketViewModel tvm)
+        public IActionResult CreateTicket(TicketViewModel tvm)
         {
             // if valid model
             if (ModelState.IsValid){
