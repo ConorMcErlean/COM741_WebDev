@@ -92,6 +92,7 @@ namespace SMS.Data.Services
             student.Name = updated.Name;
             student.Age = updated.Age;
             student.Email = updated.Email;
+            student.Course = updated.Course;
             student.Profile.Grade = updated.Profile.Grade;
             db.SaveChanges();
             return student;

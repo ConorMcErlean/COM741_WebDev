@@ -22,11 +22,14 @@ namespace SMS.Test
         public void AddStudent_WhenNone_ShouldSetAllProperties()
         {
             // act 
-            var s = svc.AddStudent("XXX", "xxx@email.com", "Computing", 20, 0);
+            var o = svc.AddStudent("XXX", "xxx@email.com", "Computing", 20, 0);
+            // retrieve student saved 
+            var s = svc.GetStudent(o.Id);
 
             // assert - that student and their profile is not null
             Assert.NotNull(s);
             Assert.NotNull(s.Profile);
+
 
             // now assert that the properties were set properly
             Assert.Equal(s.Id, s.Id);
@@ -36,6 +39,35 @@ namespace SMS.Test
             Assert.Equal(20, s.Age);
             Assert.Equal(0, s.Profile.Grade);
         }
+
+        [Fact]
+        public void UpdateStudent_ThatExists_ShouldSetAllProperties()
+        {
+            // arrange - create test student
+            var o = svc.AddStudent("ZZZ", "zzz@email.com", "Maths", 30, 100);
+                       
+            // act - update test student
+            var s = new Student {
+                Name = "XXX",           
+                Email = "xxx@email.com",
+                Course = "Computing",
+                Age = 20,
+                Profile = new Profile { Grade = 0 }
+            };
+            s = svc.UpdateStudent(o.Id, s);
+
+            // assert
+            Assert.NotNull(s);
+            Assert.NotNull(s.Profile);
+
+            // now assert that the properties were set properly           
+            Assert.Equal("XXX", s.Name);
+            Assert.Equal("xxx@email.com", s.Email);
+            Assert.Equal("Computing", s.Course);
+            Assert.Equal(20, s.Age);
+            Assert.Equal(0, s.Profile.Grade);
+        }
+ 
 
         [Fact] 
         public void GetAllStudents_WhenNone_ShouldReturn0()

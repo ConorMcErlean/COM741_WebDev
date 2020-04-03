@@ -26,10 +26,15 @@ namespace SMS.Data.Repositories
         // Could use SqlServer using connection below if installed
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder
-                .UseSqlite("Filename=SMS.db");
+            optionsBuilder               
+                /** use logger to log the sql commands issued by entityframework **/
+                // .UseLoggerFactory(new ServiceCollection()
+                //      .AddLogging(builder => builder.AddConsole())
+                //      .BuildServiceProvider()
+                //      .GetService<ILoggerFactory>()
+                //  )
+                 .UseSqlite("Filename=SMS.db");
                 //.UseSqlServer(@"Server=(localdb)\mssqllocaldb; Database=SMS; Trusted_Connection=True;ConnectRetryCount=0");
-                //.UseLoggerFactory(GetConsoleLoggerFactory()); // enables logging of queries for debugging
         }
 
         // Convenience method to recreate the database thus ensuring  the new database takes 
@@ -40,15 +45,6 @@ namespace SMS.Data.Repositories
             Database.EnsureCreated();
         }
 
-        // Creates a Sql Query console logger that can be added to context for debugging 
-        private static ILoggerFactory GetConsoleLoggerFactory()
-        {
-            IServiceCollection serviceCollection = new ServiceCollection();
-            serviceCollection.AddLogging(builder => builder.AddConsole()
-                .AddFilter(DbLoggerCategory.Query.Name, LogLevel.Information)
-            );
-            return serviceCollection.BuildServiceProvider()
-                .GetService<ILoggerFactory>();
-        }
+
     }
 }

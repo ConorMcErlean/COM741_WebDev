@@ -5,26 +5,12 @@
             <th>Issue</th>
             <th>Created</th>  
             <th>Active</th>       
-
         </tr>
     </thead>
     <tbody>
-        @foreach(var t in Model.Tickets) {
-            <tr>              
-                <td>@t.Issue</td>
-                <td>@t.CreatedOn</td>  
-                <!-- Use if to render a done icon if Active and a clear icon if inactive -->
-                <td>
-                    @if (t.Active)
-                    {
-                        <i class="material-icons">done</i>
-                    }
-                    else
-                    {
-                        <i class="material-icons">clear</i>
-                    }
-                </td>               
-            </tr>   
-        }
+        <!-- Render the list of tickets for current student -->
+        <!-- these are accessible via @Model.Tickets -->
+
+
     </tbody>
 </table>
