@@ -132,8 +132,9 @@ namespace SMS.Web.Controllers
                 return NotFound();
             }
             // create a ticket view model and set StudentId foreign key to parameter value id
-            var tvm = new TicketViewModel();
-            tvm.StudentId = s.Id;
+            var tvm = new TicketViewModel{
+                StudentId = id
+            };
             // render the view passing the viewmodel as a parameter
             return View(tvm);
         }
@@ -143,12 +144,15 @@ namespace SMS.Web.Controllers
         public IActionResult CreateTicket(TicketViewModel t)
         {
             // if valid model
-            //    call service method to create a ticket
-            //    return redirect to display current student
-            // end
-
+            if (ModelState.IsValid){
+                //    call service method to create a ticket
+                svc.CreateTicket(t.StudentId, t.Issue);
+                //    return redirect to display current student
+                return RedirectToAction("Details", new{Id =t.StudentId});
+                // end
+            }
             // redisplay the form for editing passing viewmodel t as a parameter
-            return View( );
+            return View(t);
         }
 
 

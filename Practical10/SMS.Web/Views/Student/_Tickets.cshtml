@@ -10,7 +10,13 @@
     <tbody>
         <!-- Render the list of tickets for current student -->
         <!-- these are accessible via @Model.Tickets -->
-
-
+        @foreach (var t in Model.Tickets)
+        {
+            <tr>
+                <td>@t.Issue</td>
+                <td>@t.CreatedOn</td>
+                <td>@t.Active</td>
+            </tr>
+        }
     </tbody>
 </table>

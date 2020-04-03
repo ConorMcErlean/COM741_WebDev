@@ -22,10 +22,12 @@
     <a asp-action="Edit" asp-route-id=@Model.Id class="btn btn-secondary btn-sm">Edit</a>
 
     <!-- Q5 add navigation link to create a ticket -->
+    <a asp-action="CreateTicket" asp-route-id=@Model.Id class="btn btn-primary btn-sm">Create Ticket</a>
   
 </div>
 
 <!-- Q5 Add Partial rendering the student tickets -->
+<partial name="_Tickets" />
 
 
 
