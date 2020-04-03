@@ -32,11 +32,13 @@ namespace SMS.Web.Controllers
         public IActionResult Close(int id)
         {
             // load ticket via service
+            // call service method to close the ticket
+            var s = svc.CloseTicket(id);
 
             // verify ticket found and if not return NotFound()
-
-            // call service method to close the ticket
-
+            if (s == null){
+                return NotFound();
+            }
             // redirect to the index view
             return RedirectToAction(nameof(Index));
         }
@@ -45,14 +47,16 @@ namespace SMS.Web.Controllers
         public IActionResult Create()
         {
             // call service methods to return all students
-            
+            var students = svc.GetAllStudents();
 
             // create a TicketViewModel and set Students property 
             // as selectlist containing student Id and Name
-           
+            var tvm = new TicketViewModel{
+                Students = new SelectList(students, "Id", "Name")
+            };
             
             // render form - passing view model created
-            return View( );
+            return View(tvm);
         }
 
         // POST /ticket/create
@@ -60,12 +64,15 @@ namespace SMS.Web.Controllers
         public IActionResult Create(TicketViewModel tvm)
         {
             // if valid model
-            //   call service to create ticket
-            //   redirect to index action      
-            // end
-
+            if (ModelState.IsValid){
+                //   call service to create ticket
+                svc.CreateTicket(tvm.StudentId, tvm.Issue); 
+                //   redirect to index action
+                return RedirectToAction(nameof(Index));      
+                // end
+            }
             // redisplay the form passing viewmodel for editing
-            return View(  );
+            return View(tvm);
         }
     }
 }

@@ -7,7 +7,31 @@
    <a asp-action="Create" class="btn btn-primary btn-sm">Create Ticket</a>
 </div>
 
+<div>
+<table class="table table-striped">
 <!-- Add a table to render the List of Tickets                -->
-<!-- Provide an action column for each Ticket which contains  -->
-<!-- a link form to post to the TicketController Close action -->
-
+<thead>
+   <tr>
+      <th>Id</th>
+      <th>Student</th>
+      <th>Issue</th>
+      <th>Created</th>
+      <th>Actions</th>
+   </tr>
+</thead>
+<tbody>
+   @foreach(var t in Model)
+   {
+      <tr>
+         <td>@t.Id</td>
+         <td>@t.Student.Name</td>
+         <td>@t.Issue</td>
+         <td>@t.CreatedOn</td>
+      <!-- Provide an action column for each Ticket which contains  -->
+      <!-- a link form to post to the TicketController Close action -->
+         <td><a asp-action="Close">Close</a></td>
+      </tr>
+   }
+</tbody>
+</table>
+</div>

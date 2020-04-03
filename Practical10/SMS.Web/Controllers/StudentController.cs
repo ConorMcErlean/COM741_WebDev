@@ -125,13 +125,17 @@ namespace SMS.Web.Controllers
         public IActionResult CreateTicket(int id)
         {
             // retrieve the student identified by id
+            var s = svc.GetStudent(id);
 
             // verify student found and if not return NotFound()
-
+            if (s == null){
+                return NotFound();
+            }
             // create a ticket view model and set StudentId foreign key to parameter value id
-
+            var tvm = new TicketViewModel();
+            tvm.StudentId = s.Id;
             // render the view passing the viewmodel as a parameter
-            return View(  );
+            return View(tvm);
         }
 
         // POST /student/create
