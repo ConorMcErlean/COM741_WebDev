@@ -13,11 +13,12 @@ namespace VMS.Data.Models
         public string Make {get; set;}
         [Required]
         public string Model {get; set;}
+        public string Colour { get; set;}
         public DateTime RegDate {get; set;}
         public string RegNumber {get; set;}
         // Age will set a private variable based on RegDate
         private int _age;
-        public int age 
+        public int Age 
         {   
             get { return _age; }
             set {
@@ -26,11 +27,11 @@ namespace VMS.Data.Models
         }// age
         public string TransmissionType {get; set;}
         [Range(0, 300)]
-        public string CO2Rating {get; set;}
+        public int CO2Rating {get; set;}
         public string FuelType {get; set;}
         public string BodyType {get; set;}
-        public string Doors {get; set;}
-        public UrlAttribute photo {get; set;}
+        public int Doors {get; set;}
+        public string Photo {get; set;}
 
         public IList<Service> Services { get; set;}
     }// Vehicle Class
