@@ -24,7 +24,7 @@ namespace VMS.Data.Services
             var Previous = db.Vehicles.FirstOrDefault( p => p.RegNumber == v.RegNumber);
             if (Previous != null){ return null; }
             // If not add Vehicle
-            db.Add(v);
+            db.Vehicles.Add(v);
             db.SaveChanges();
             // Return added vehicle
             return v;
@@ -90,16 +90,33 @@ namespace VMS.Data.Services
         // Service Management
         public Service AddService(Service s)
         {
-            throw new System.NotImplementedException();
-        }
+            // Check if service exists (Using date, vehicle & cost) if so return null
+            var Previous = db.Services.FirstOrDefault( p => (p.DateOfService == s.DateOfService) && 
+                                                            (p.Vehicle == s.Vehicle) &&
+                                                            (p.Cost == s.Cost) );
+            if (Previous != null){ return null;}
+
+            // Add service
+            db.Services.Add(s);
+
+            // Save and return
+            db.SaveChanges();
+            return s;
+        } // AddService
         public Service GetServiceById(int id)
         {
-            throw new System.NotImplementedException();
-        }
+            return db.Services.Include(s => s.Vehicle).FirstOrDefault( s => s.ServiceId == id);
+        } // GetServiceById
         public bool DeleteService(int id)
         {
-            throw new System.NotImplementedException();
-        }
+            // Check Service Exists
+            var ToBeRemoved = db.Services.FirstOrDefault( s => s.ServiceId == id);
+            if (ToBeRemoved == null){ return false; }
 
-    }
+            // If so Delete & Return true
+            db.Services.Remove(ToBeRemoved);
+            db.SaveChanges();
+            return true;
+        }
+    } // VehicleDbService
 }
