@@ -32,6 +32,6 @@ namespace VMS.Data.Models
         public string Doors {get; set;}
         public UrlAttribute photo {get; set;}
 
-        IList<Service> Services { get; set;}
+        public IList<Service> Services { get; set;}
     }// Vehicle Class
 }

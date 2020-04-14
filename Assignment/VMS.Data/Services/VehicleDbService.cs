@@ -10,36 +10,82 @@ namespace VMS.Data.Services
     // implement each of these methods (removing the thow statements)
     public class VehicleDbService : IVehicleService
     {
+        private readonly VehicleDbContext db;
 
         public void Initialise()
         {
-            throw new System.NotImplementedException();
+            db.Initialise();
         }
        
         // Vehicle Management
         public Vehicle AddVehicle(Vehicle v)
         {
-            throw new System.NotImplementedException();
-        }
+            // Verify Same Vehicle does not exist (using RegNum as a unique Attribute)
+            var Previous = db.Vehicles.FirstOrDefault( p => p.RegNumber == v.RegNumber);
+            if (Previous != null){ return null; }
+            // If not add Vehicle
+            db.Add(v);
+            db.SaveChanges();
+            // Return added vehicle
+            return v;
+        } // AddVehicle
 
         public bool DeleteVehicle(int id)
         {
-            throw new System.NotImplementedException();
-        }
+            // Select Vehicle to be removed
+            var ToBeRemoved = db.Vehicles.FirstOrDefault(v => v.Id == id);
+
+            // Check if vehicle exists if not return false
+            if (ToBeRemoved == null){ return false; }
+
+            // Remove Vehicle
+            db.Vehicles.Remove(ToBeRemoved);
+
+            // Save and return true
+            db.SaveChanges();
+            return true;
+
+        }// DeleteVehicle
 
         public IList<Vehicle> GetAllVehicles(string orderBy = null)
         {
-            throw new System.NotImplementedException();
-        }
+            // Based on OrderBy Query Database 
+            switch(orderBy)
+            {
+                case "make": 
+                    return db.Vehicles.Include(v => v.Services).OrderBy(v => v.Make).ToList();
+                case "fuel": 
+                    return db.Vehicles.Include(v => v.Services).OrderBy(v => v.FuelType).ToList();
+                case "registered": 
+                    return db.Vehicles.Include(v => v.Services).OrderBy(v => v.RegDate).ToList();
+                default:
+                    return db.Vehicles.Include(v => v.Services).ToList();
+                    
+            } // Switch  
+        }// GetAllVehicles
   
         public Vehicle GetVehicleById(int id)
         {
-            throw new System.NotImplementedException();
-        }
+            return db.Vehicles.Include(v => v.Services).FirstOrDefault(v => v.Id == id);
+        }// GetVehicleById
         public Vehicle UpdateVehicle(int id, Vehicle v)
         {
-            throw new System.NotImplementedException();
-        }
+            // Find Vehicle matching ID
+            var Previous = db.Vehicles.FirstOrDefault( v => v.Id == id);
+
+            // Check it exists (if not return null)
+            if (Previous == null){
+                return null;
+            }
+
+            // Set Vehicle Attributes
+            Previous = v;
+
+            //Save & Return
+            db.SaveChanges();
+            return Previous;
+
+        }// UpdateVehicle
 
         // Service Management
         public Service AddService(Service s)
