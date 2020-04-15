@@ -609,8 +609,94 @@ namespace VMS.Test
     }
 
     // DeleteService Tests
+    [Fact]
+    public void DeleteService_WhenServiceDoesntExist_ShouldReturnFalse()
+    {
+    //Given
+    
+    //When
+    var deleted = svc.DeleteService(001);
+    
+    //Then
+    Assert.False(deleted);
+    }
 
+    [Fact]
+    public void DeleteService_WhenServiceExists_ShouldReturnTrue()
+    {
+    //Given
+     var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    svc.AddVehicle(v1);
+    var s1 = new Service
+    {
+        CarriedOutBy = "AAA",
+        DateOfService = new DateTime(12/12/2012),
+        WorkDescription = "BBB",
+        CurrentMilage = 1,
+        Cost = 1.0,
+        Vehicle = v1
+    };
+    svc.AddService(s1);
+    
+    //When
+    var deleted = svc.DeleteService(s1.ServiceId);
+    
+    //Then
+    Assert.True(deleted);
 
+    }
+
+    [Fact]
+    public void DeleteService_WhenServiceExists_ShouldRemoveService()
+    {
+    //Given
+     var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    svc.AddVehicle(v1);
+    var s1 = new Service
+    {
+        CarriedOutBy = "AAA",
+        DateOfService = new DateTime(12/12/2012),
+        WorkDescription = "BBB",
+        CurrentMilage = 1,
+        Cost = 1.0,
+        Vehicle = v1
+    };
+    svc.AddService(s1);
+    
+    //When
+    var deleted = svc.DeleteService(s1.ServiceId);
+    var retrieved = svc.GetServiceById(s1.ServiceId);
+    
+    //Then
+    Assert.Null(retrieved);
+    
+    }
 
     } // TestVehicleService
 
