@@ -331,11 +331,113 @@ namespace VMS.Test
     //Then
     Assert.Null(s1);
     }
-
-
     
     // UpdateVehicle Tests
+    [Fact]
+    public void UpdateVehicle_WhenDoesntExist_ShouldReturnNull()
+    {
+    //Given
+    var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    
+    //When
+    var edited = svc.UpdateVehicle(001, v1);
+    
+    //Then
+    Assert.Null(edited);
+    }
 
+    [Fact]
+    public void UpdateVehicle_WhenExists_ShouldModifyAtttributes()
+    {
+    //Given
+    var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    v1 = svc.AddVehicle(v1);
+    var v1Modified = new Vehicle
+       {
+            Make = "AAAA",
+            Model = "BBBB",
+            Colour = "CCCC",
+            RegDate = new DateTime(02/02/2011),
+            RegNumber = "DDDD",
+            TransmissionType = "EEEE",
+            CO2Rating = 11,
+            FuelType = "FFFF",
+            BodyType = "GGGG",
+            Doors = 22,
+            Photo = "HHHH"
+       };
+    
+    //When
+    var edited = svc.UpdateVehicle(v1.Id, v1Modified);
+    var selected =svc.GetVehicleById(v1.Id);
+    
+    //Then
+    Assert.NotNull(edited);
+
+    // Check Attributes Returned by method and retrieved from DB
+    Assert.Equal(v1Modified.Make, edited.Make);
+    Assert.Equal(v1Modified.Make, selected.Make);
+
+    Assert.Equal(v1Modified.Model, edited.Model);
+    Assert.Equal(v1Modified.Model, selected.Model);
+
+    Assert.Equal(v1Modified.RegDate, edited.RegDate);
+    Assert.Equal(v1Modified.RegDate, selected.RegDate);
+
+    Assert.Equal(v1Modified.Make, edited.Make);
+    Assert.Equal(v1Modified.Make, selected.Make);
+
+    Assert.Equal(v1Modified.RegNumber, edited.RegNumber);
+    Assert.Equal(v1Modified.RegNumber, selected.RegNumber);
+
+    Assert.Equal(v1Modified.Age, edited.Age);
+    Assert.Equal(v1Modified.Age, selected.Age);
+
+    Assert.Equal(v1Modified.TransmissionType, edited.TransmissionType);
+    Assert.Equal(v1Modified.TransmissionType, selected.TransmissionType);
+
+    Assert.Equal(v1Modified.CO2Rating, edited.CO2Rating);
+    Assert.Equal(v1Modified.CO2Rating, selected.CO2Rating);
+
+    Assert.Equal(v1Modified.FuelType, edited.FuelType);
+    Assert.Equal(v1Modified.FuelType, selected.FuelType);
+
+    Assert.Equal(v1Modified.BodyType, edited.BodyType);
+    Assert.Equal(v1Modified.BodyType, selected.BodyType);
+
+    Assert.Equal(v1Modified.Doors, edited.Doors);
+    Assert.Equal(v1Modified.Doors, selected.Doors);
+
+    Assert.Equal(v1Modified.Photo, edited.Photo);
+    Assert.Equal(v1Modified.Photo, selected.Photo);
+    }
+    
     // AddService Tests
 
     // GetServiceById Tests

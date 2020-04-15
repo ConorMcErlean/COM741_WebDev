@@ -84,7 +84,19 @@ namespace VMS.Data.Services
             }
 
             // Set Vehicle Attributes
-            Previous = v;
+            // Previous = v; // Set all in one go: Did not work correctly
+
+            Previous.Make = v.Make;
+            Previous.Model = v.Model;
+            Previous.Colour =v.Colour;
+            Previous.RegDate =v.RegDate;
+            Previous.RegNumber =v.RegNumber;
+            Previous.TransmissionType =v.TransmissionType;
+            Previous.CO2Rating =v.CO2Rating;
+            Previous.FuelType =v.FuelType;
+            Previous.BodyType =v.BodyType;
+            Previous.Doors =v.Doors;
+            Previous.Photo =v.Photo;
 
             //Save & Return
             db.SaveChanges();
