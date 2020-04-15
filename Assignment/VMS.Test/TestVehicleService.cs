@@ -12,7 +12,7 @@ namespace VMS.Test
     {
         // Service
         private readonly IVehicleService svc;
-        private TestVehicleService()
+        public TestVehicleService()
         {
             // General Arangement
             svc = new VehicleDbService();
@@ -21,11 +21,26 @@ namespace VMS.Test
         }
         
        // define a set of appropriate tests to test the vehicle service class
+
+       // AddVehicle Tests
        [Fact]
        public void AddVehicle_WhenNone_ShouldNotReturnNull()
        {
        //Given
-       var car = new Vehicle();
+       var car = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
        
        //When
        var v = svc.AddVehicle(car);
@@ -142,8 +157,12 @@ namespace VMS.Test
         Assert.NotNull(v2);
         Assert.NotNull(v3);
         Assert.NotNull(v4);
-        Assert.Equal(v3, v4);
+        Assert.Equal(v1, v3);
+        Assert.Equal(v2, v4);
+
         }
+        
+        // DeleteVehicle Tests
         [Fact]
         public void DeleteVehicle_WhenVehicleDoesntExist_ShouldReturnFalse()
         {
@@ -209,5 +228,32 @@ namespace VMS.Test
         Assert.Null(d2);
         }
 
-    }    
-}
+
+        
+    // GetAllVehicles Tests
+
+    // GetVehicleById Tests
+
+    [Fact]
+    public void GetVehicleById_WhenExists_ShouldReturnVehicle()
+    {
+    //Given
+    
+    //When
+    
+    //Then
+    }
+
+    // UpdateVehicle Tests
+
+    // AddService Tests
+
+    // GetServiceById Tests
+
+    // DeleteService Tests
+
+
+    
+    } // TestVehicleService
+
+} // Namespace

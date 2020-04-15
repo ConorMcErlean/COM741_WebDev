@@ -8,8 +8,18 @@ namespace VMS.Data.Repositories
 {
     public class VehicleDbContext : DbContext
     {
+
+        
+        // Allow Querying of Vehicles Table
+        public DbSet<Vehicle> Vehicles { get; set;}
+
+        // Allow Querying of Services Table
+        public DbSet<Service> Services { get; set;}
+
+        
         // Database context using SQLite
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        protected override void OnConfiguring(
+            DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Filename=data.db")
             /* Optional Logging (Comment in/out based on need) */
@@ -21,11 +31,6 @@ namespace VMS.Data.Repositories
             ;
         }
 
-        // Allow Querying of Vehicles Table
-        public DbSet<Vehicle> Vehicles { get; set;}
-
-        // Allow Querying of Services Table
-        public DbSet<Service> Services { get; set;}
 
         // Initialising Tables
         public void Initialise()

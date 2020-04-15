@@ -11,6 +11,11 @@ namespace VMS.Data.Services
     public class VehicleDbService : IVehicleService
     {
         private readonly VehicleDbContext db;
+    
+        public VehicleDbService()
+        {
+            db = new VehicleDbContext();
+        }
 
         public void Initialise()
         {
