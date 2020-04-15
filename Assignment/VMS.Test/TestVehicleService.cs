@@ -238,12 +238,102 @@ namespace VMS.Test
     public void GetVehicleById_WhenExists_ShouldReturnVehicle()
     {
     //Given
+    var car = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    var added = svc.AddVehicle(car);
     
     //When
+    var selected = svc.GetVehicleById(car.Id);
     
     //Then
+    Assert.NotNull(selected);
+    Assert.Equal(added, selected);
     }
 
+    [Fact]
+    public void GetVehicleById_WhenMultipleExist_ShouldReturnVehicle()
+    {
+    //Given
+    var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    var v2 = new Vehicle {
+        Make = "III",
+        Model = "JJJ",
+        Colour = "KKK",
+        RegDate = new DateTime(01/01/2011),
+        RegNumber = "LLL",
+        TransmissionType = "MMM",
+        CO2Rating = 1,
+        FuelType = "NNN",
+        BodyType = "OOO",
+        Doors = 2,
+        Photo = "PPP"
+    };
+        v1 = svc.AddVehicle(v1);
+        v2 = svc.AddVehicle(v2);
+    
+    //When
+    var s1 = svc.GetVehicleById(v1.Id);
+    var s2 = svc.GetVehicleById(v2.Id);
+    
+    //Then
+    Assert.NotNull(s1);
+    Assert.NotNull(s2);
+    Assert.Equal(v1, s1);
+    Assert.Equal(v2, s2);
+    }
+    
+    [Fact]
+    public void GetVehicleById_WhenDoesntExist_ShouldReturnNull()
+    {
+    //Given
+    var v1 = new Vehicle {
+            Make = "III",
+            Model = "JJJ",
+            Colour = "KKK",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "LLL",
+            TransmissionType = "MMM",
+            CO2Rating = 1,
+            FuelType = "NNN",
+            BodyType = "OOO",
+            Doors = 2,
+            Photo = "PPP"
+        };
+    
+    //When
+    var s1 = svc.GetVehicleById(v1.Id);
+    
+    //Then
+    Assert.Null(s1);
+    }
+
+
+    
     // UpdateVehicle Tests
 
     // AddService Tests
@@ -253,7 +343,7 @@ namespace VMS.Test
     // DeleteService Tests
 
 
-    
+
     } // TestVehicleService
 
 } // Namespace
