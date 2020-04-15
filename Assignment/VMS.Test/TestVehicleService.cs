@@ -228,8 +228,6 @@ namespace VMS.Test
         Assert.Null(d2);
         }
 
-
-        
     // GetAllVehicles Tests
 
     // GetVehicleById Tests
@@ -439,7 +437,123 @@ namespace VMS.Test
     }
     
     // AddService Tests
-
+    [Fact]
+    public void AddService_WhenVehicleDoesntExist_ShouldReturnNull()
+    {
+    //Given
+    var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    
+    var s1 = new Service
+    {
+        CarriedOutBy = "AAA",
+        DateOfService = new DateTime(12/12/2012),
+        WorkDescription = "BBB",
+        CurrentMilage = 1,
+        Cost = 1.0,
+        Vehicle = v1
+    };
+    
+    //When
+    var added = svc.AddService(s1);
+    
+    //Then
+    Assert.Null(added);
+    }
+    [Fact]
+    public void AddService_WhenVehicleDoesExist_ShouldReturnService()
+    {
+    //Given
+    var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    svc.AddVehicle(v1);
+    var s1 = new Service
+    {
+        CarriedOutBy = "AAA",
+        DateOfService = new DateTime(12/12/2012),
+        WorkDescription = "BBB",
+        CurrentMilage = 1,
+        Cost = 1.0,
+        Vehicle = v1
+    };
+    
+    //When
+    var added = svc.AddService(s1);
+    
+    //Then
+    Assert.NotNull(added);
+    Assert.Equal(s1, added);
+    }
+    
+    [Fact]
+    public void AddService_WhenServiceExists_ShouldReturnNull()
+    {
+    //Given
+    var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    svc.AddVehicle(v1);
+    var s1 = new Service
+    {
+        CarriedOutBy = "AAA",
+        DateOfService = new DateTime(12/12/2012),
+        WorkDescription = "BBB",
+        CurrentMilage = 1,
+        Cost = 1.0,
+        Vehicle = v1
+    };
+    var s2 = new Service
+    {
+        CarriedOutBy = "AAA",
+        DateOfService = new DateTime(12/12/2012),
+        WorkDescription = "BBB",
+        CurrentMilage = 1,
+        Cost = 1.0,
+        Vehicle = v1
+    };
+    
+    //When
+    svc.AddService(s1);
+    var Added = svc.AddService(s2);
+    //Then
+    Assert.Null(Added);
+    }
+    
     // GetServiceById Tests
 
     // DeleteService Tests

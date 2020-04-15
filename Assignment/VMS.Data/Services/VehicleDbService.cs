@@ -113,6 +113,9 @@ namespace VMS.Data.Services
                                                             (p.Cost == s.Cost) );
             if (Previous != null){ return null;}
 
+            // Check if Vehicle exists, if not return null
+            var vehicle = db.Vehicles.FirstOrDefault( v => s.Vehicle.Id == v.Id);
+            if (vehicle == null){ return null;}
             // Add service
             db.Services.Add(s);
 
