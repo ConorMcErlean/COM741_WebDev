@@ -16,7 +16,7 @@ namespace VMS.Data.Services
                 Make = "Tesla",
                 Model = "Model S",
                 Colour = "Black",
-                RegDate = new DateTime(2012/06/12),
+                RegDate = new DateTime(2012,06,12),
                 RegNumber = "AAA 3601",
                 TransmissionType = "Automatic",
                 CO2Rating = 0,
@@ -31,7 +31,7 @@ namespace VMS.Data.Services
                 Make = "Tesla",
                 Model = "Model X",
                 Colour = "White",
-                RegDate = new DateTime(2016/01/16),
+                RegDate = new DateTime(2016,01,16),
                 RegNumber = "BBB 3702",
                 TransmissionType = "Automatic",
                 CO2Rating = 0,
@@ -46,7 +46,7 @@ namespace VMS.Data.Services
                 Make = "Tesla",
                 Model = "Model 3",
                 Colour = "Midnight Blue",
-                RegDate = new DateTime(2018/05/18),
+                RegDate = new DateTime(2018,05,18),
                 RegNumber = "CCC 3803",
                 TransmissionType = "Automatic",
                 CO2Rating = 0,
@@ -61,7 +61,7 @@ namespace VMS.Data.Services
                 Make = "Tesla",
                 Model = "Model Y",
                 Colour = "Blue",
-                RegDate = new DateTime(2019/07/28),
+                RegDate = new DateTime(2019,07,28),
                 RegNumber = "DDD 3904",
                 TransmissionType = "Automatic",
                 CO2Rating = 0,
@@ -76,7 +76,7 @@ namespace VMS.Data.Services
                 Make = "Tesla",
                 Model = "Roadster 2020",
                 Colour = "Red",
-                RegDate = new DateTime(2020/05/17),
+                RegDate = new DateTime(2020,05,17),
                 RegNumber = "EEE 4005",
                 TransmissionType = "Automatic",
                 CO2Rating = 0,
@@ -91,7 +91,7 @@ namespace VMS.Data.Services
                 Make = "Tesla",
                 Model = "CyberTruck",
                 Colour = "Grey",
-                RegDate = new DateTime(2020/05/18),
+                RegDate = new DateTime(2020,05,18),
                 RegNumber = "FFF 4106",
                 TransmissionType = "Automatic",
                 CO2Rating = 0,
@@ -106,7 +106,7 @@ namespace VMS.Data.Services
                 Make = "Renault",
                 Model = "Zoe",
                 Colour = "Blue",
-                RegDate = new DateTime(2020/03/16),
+                RegDate = new DateTime(2020,03,16),
                 RegNumber = "p4 94230",
                 TransmissionType = "Automatic",
                 CO2Rating = 0,
@@ -129,7 +129,7 @@ namespace VMS.Data.Services
             var s1 = new Service
             {
                 CarriedOutBy = "Elon Musk",
-                DateOfService = new DateTime (2018/12/12),
+                DateOfService = new DateTime (2018,12,12),
                 WorkDescription = "Updating the autopilot to level 3",
                 CurrentMilage = 2500,
                 Cost = 3000,
@@ -139,7 +139,7 @@ namespace VMS.Data.Services
                var s2 = new Service
             {
                 CarriedOutBy = "Elon Musk",
-                DateOfService = new DateTime (2017/01/25),
+                DateOfService = new DateTime (2017,01,25),
                 WorkDescription = "Making car sing and dance to christmas music",
                 CurrentMilage = 3000,
                 Cost = 00.00,
@@ -149,7 +149,7 @@ namespace VMS.Data.Services
                var s3 = new Service
             {
                 CarriedOutBy = "Elon Musk",
-                DateOfService = new DateTime (2019/09/27),
+                DateOfService = new DateTime (2019,09,27),
                 WorkDescription = "Adding videogames to infotainment system",
                 CurrentMilage = 1000,
                 Cost = 1000,
@@ -159,7 +159,7 @@ namespace VMS.Data.Services
                var s4 = new Service
             {
                 CarriedOutBy = "Joe Bloggs",
-                DateOfService = new DateTime (2019/12/12),
+                DateOfService = new DateTime (2019,12,12),
                 WorkDescription = "Replacing Cracked window after demonstrating the bulletproof glass",
                 CurrentMilage = 00,
                 Cost = 2500,
