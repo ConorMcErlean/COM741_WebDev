@@ -19,11 +19,11 @@ namespace VMS.Web.Controllers
             svc = new VehicleDbService();
         }// Vehicle Controller
 
-        // Get /Vehicle/Index
-        public IActionResult Index()
+        // Get /Vehicle/Index{order}
+        public IActionResult Index(String order)
         {
             // Retrieve list of vehicles
-            var VehicleList = svc.GetAllVehicles();
+            var VehicleList = svc.GetAllVehicles(order);
 
             //Render a view with the list
             return View(VehicleList);
