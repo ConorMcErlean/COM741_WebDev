@@ -43,7 +43,8 @@ namespace VMS.Web
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
-               
+               // Seed Database
+               VehicleServiceSeeder.Seed(new VehicleDbService());
             }
             else
             {
