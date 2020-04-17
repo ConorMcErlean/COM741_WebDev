@@ -1,0 +1,54 @@
+@Model Vehicle
+
+<h3>Vehicle Details</h3>
+<div class="row">
+    <div class="col-3">
+                <h5>Make:</h5><h3>@Model.Make</h3>
+    </div>
+    <div class="col-3">
+                <h5>Model:</h5><h3>@Model.Model</h3>
+    </div>
+    <div class="col-3">
+                <h5>Fuel Type:</h5><h3>@Model.FuelType</h3>
+    </div>
+    <div class="col-3">
+          <!-- Blank Grid Space -->      
+    </div>    
+</div>
+<div class="row">
+    <div class="col-8">
+        <!-- Image -->
+        <img src="@Model.Photo" class="img-fluid" alt="Image of @Model.Make @Model.Model in @Model.Colour">
+    </div>
+
+    <div class="col-4">
+        <dl>
+            <dt>Colour</dt>
+            <dd>@Model.Colour</dd>
+
+            <dt>Registration Date</dt>
+            <dd>@Model.RegDate</dd>
+
+            <dt>Registration Number</dt>
+            <dd>@Model.RegNumber</dd>
+
+            <dt>Age</dt>
+            <dd>@Model.Age</dd>
+
+            <dt>Transmission Type</dt>
+            <dd>@Model.TransmissionType</dd>
+
+            <dt>Co2 Rating</dt>
+            <dd>@Model.CO2Rating</dd>
+
+            <dt>Body Type</dt>
+            <dd>@Model.BodyType</dd>
+
+            <dt>Number of Doors</dt>
+            <dd>@Model.Doors</dd>
+        </dl>
+    </div>
+    
+</div>
+
+<!-- Partial To Render Service Record -->
