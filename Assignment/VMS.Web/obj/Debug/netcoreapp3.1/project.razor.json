@@ -20569,6 +20569,11 @@
       "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\_ViewStart.cshtml",
       "TargetPath": "Views\\_ViewStart.cshtml",
       "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Vehicle\\_Services.cshtml",
+      "TargetPath": "Views\\Vehicle\\_Services.cshtml",
+      "FileKind": "mvc"
     }
   ],
   "SerializationFormat": "0.2"

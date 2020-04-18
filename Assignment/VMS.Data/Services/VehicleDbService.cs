@@ -125,6 +125,25 @@ namespace VMS.Data.Services
             db.SaveChanges();
             return s;
         } // AddService
+
+         public IList<Service> GetAllServices(string orderBy = null)
+        {
+            // Based on OrderBy Query Database 
+            switch(orderBy)
+            {
+                case "CarriedOutBy": 
+                    return db.Services.Include(s => s.Vehicle).OrderBy(v => v.CarriedOutBy).ToList();
+                case "DateOfService": 
+                    return db.Services.Include(s => s.Vehicle).OrderBy(v => v.DateOfService).ToList();
+                case "Vehicle": 
+                    return db.Services.Include(s => s.Vehicle).OrderBy(v => v.Vehicle).ToList();
+                case "Cost":
+                    return db.Services.Include(s => s.Vehicle).OrderBy(v => v.Cost).ToList();
+                default:
+                    return db.Services.Include(s => s.Vehicle).ToList();
+                    
+            } // Switch  
+        }// GetAllVehicles
         public Service GetServiceById(int id)
         {
             return db.Services.Include(s => s.Vehicle).FirstOrDefault( s => s.ServiceId == id);

@@ -133,7 +133,7 @@ namespace VMS.Data.Services
                 WorkDescription = "Updating the autopilot to level 3",
                 CurrentMilage = 2500,
                 Cost = 3000,
-                VehicleID = v1.Id
+                Vehicle = v1
             };
 
                var s2 = new Service
@@ -143,7 +143,7 @@ namespace VMS.Data.Services
                 WorkDescription = "Making car sing and dance to christmas music",
                 CurrentMilage = 3000,
                 Cost = 00.00,
-                VehicleID = v2.Id
+                Vehicle = v2
             };
 
                var s3 = new Service
@@ -153,7 +153,7 @@ namespace VMS.Data.Services
                 WorkDescription = "Adding videogames to infotainment system",
                 CurrentMilage = 1000,
                 Cost = 1000,
-                VehicleID = v3.Id
+                Vehicle = v3
             };
 
                var s4 = new Service
@@ -163,10 +163,14 @@ namespace VMS.Data.Services
                 WorkDescription = "Replacing Cracked window after demonstrating the bulletproof glass",
                 CurrentMilage = 00,
                 Cost = 2500,
-                VehicleID = v6.Id
+                Vehicle = v6
             };
 
             // Add to DB
+            svc.AddService(s1);
+            svc.AddService(s2);
+            svc.AddService(s3);
+            svc.AddService(s4);
         }
     }
 }// Namespace

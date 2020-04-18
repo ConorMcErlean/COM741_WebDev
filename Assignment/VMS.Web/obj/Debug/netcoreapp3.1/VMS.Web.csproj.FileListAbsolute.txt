@@ -77,3 +77,4 @@ D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\VMS.Web.
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\VMS.Web.pdb
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Index.cshtml.g.cs
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Details.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\_Services.cshtml.g.cs

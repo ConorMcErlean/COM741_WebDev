@@ -812,6 +812,47 @@ namespace VMS.Test
 
     }
 
+    [Fact]
+    public void GetServiceByVehicle_WhenServiceExists_ShouldReturnService()
+    {
+    //Given
+    
+     var v1 = new Vehicle
+       {
+            Make = "AAA",
+            Model = "BBB",
+            Colour = "CCC",
+            RegDate = new DateTime(01/01/2011),
+            RegNumber = "DDD",
+            TransmissionType = "EEE",
+            CO2Rating = 1,
+            FuelType = "FFF",
+            BodyType = "GGG",
+            Doors = 2,
+            Photo = "HHH"
+       };
+    svc.AddVehicle(v1);
+    var s1 = new Service
+    {
+        CarriedOutBy = "AAA",
+        DateOfService = new DateTime(12/12/2012),
+        WorkDescription = "BBB",
+        CurrentMilage = 1,
+        Cost = 1.0,
+        Vehicle = v1
+    };
+    svc.AddService(s1);
+
+    //When
+    var selected = svc.GetVehicleById(v1.Id);
+    var service = selected.Services[0];
+    
+    //Then
+    Assert.NotNull(service);
+    Assert.Equal(s1, service);
+
+    }
+
     // DeleteService Tests
     [Fact]
     public void DeleteService_WhenServiceDoesntExist_ShouldReturnFalse()
@@ -824,6 +865,8 @@ namespace VMS.Test
     //Then
     Assert.False(deleted);
     }
+
+    
 
     [Fact]
     public void DeleteService_WhenServiceExists_ShouldReturnTrue()
