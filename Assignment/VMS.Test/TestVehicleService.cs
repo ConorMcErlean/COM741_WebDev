@@ -230,6 +230,210 @@ namespace VMS.Test
 
     // GetAllVehicles Tests
 
+    [Fact]
+    public void GetAllVehicle_WhenNoVehicles_ShouldReturnEmpty()
+    {
+    //Given
+    
+    //When
+    var list = svc.GetAllVehicles();
+    
+    //Then
+    Assert.Empty(list);
+    }
+
+    [Fact]
+    public void GetAllVehicle_WhenVehicles_ShouldReturnList()
+    {
+    //Given
+    var v1 = new Vehicle {
+            Make = "AAA",
+            Model = "ZZZ",
+            RegDate = new DateTime(02/02/2002),
+            RegNumber = "ABC"
+        };
+    svc.AddVehicle(v1);
+
+    var v2 = new Vehicle {
+            Make = "BBB",
+            Model = "YYY",
+            RegDate = new DateTime(01/01/2001),
+            RegNumber = "DEF"
+        };
+    svc.AddVehicle(v2);
+
+    var v3 = new Vehicle {
+            Make = "CCC",
+            Model = "XXX",
+            RegDate = new DateTime(03/03/2003),
+            RegNumber = "GHI"
+        };
+    svc.AddVehicle(v3);
+    
+    //When
+    var list = svc.GetAllVehicles();
+    
+    //Then
+    Assert.NotEmpty(list);
+    Assert.Equal(list[0], v1);
+    Assert.Equal(list[1], v2);
+    Assert.Equal(list[2], v3);
+    }
+
+    [Fact]
+    public void GetAllVehicle_WhenVehicles_ParameterMake_ShouldReturnListOrderedByMake()
+    {
+    //Given
+    var v1 = new Vehicle {
+            Make = "AAA",
+            Model = "ZZZ",
+            RegDate = new DateTime(02/02/2002),
+            RegNumber = "ABC"
+        };
+    svc.AddVehicle(v1);
+
+    var v2 = new Vehicle {
+            Make = "BBB",
+            Model = "YYY",
+            RegDate = new DateTime(01/01/2001),
+            RegNumber = "DEF"
+        };
+    svc.AddVehicle(v2);
+
+    var v3 = new Vehicle {
+            Make = "CCC",
+            Model = "XXX",
+            RegDate = new DateTime(03/03/2003),
+            RegNumber = "GHI"
+        };
+    svc.AddVehicle(v3);
+    
+    //When
+    var list = svc.GetAllVehicles("Make");
+    
+    //Then
+    Assert.NotEmpty(list);
+    Assert.Equal(list[0], v1);
+    Assert.Equal(list[1], v2);
+    Assert.Equal(list[2], v3);
+    }
+
+    [Fact]
+    public void GetAllVehicle_WhenVehicles_ParameterModel_ShouldReturnListOrderedByModel()
+    {
+    //Given
+    var v1 = new Vehicle {
+            Make = "AAA",
+            Model = "ZZZ",
+            RegDate = new DateTime(02/02/2002),
+            RegNumber = "ABC"
+        };
+    svc.AddVehicle(v1);
+
+    var v2 = new Vehicle {
+            Make = "BBB",
+            Model = "YYY",
+            RegDate = new DateTime(01/01/2001),
+            RegNumber = "DEF"
+        };
+    svc.AddVehicle(v2);
+
+    var v3 = new Vehicle {
+            Make = "CCC",
+            Model = "XXX",
+            RegDate = new DateTime(03/03/2003),
+            RegNumber = "GHI"
+        };
+    svc.AddVehicle(v3);
+    
+    //When
+    var list = svc.GetAllVehicles("Model");
+    
+    //Then
+    Assert.NotEmpty(list);
+    Assert.Equal(list[0], v3);
+    Assert.Equal(list[1], v2);
+    Assert.Equal(list[2], v1);
+    }
+
+    [Fact]
+    public void GetAllVehicle_WhenVehicles_ParameterRegDate_ShouldReturnListOrderedByRegDate()
+    {
+    //Given
+    var v1 = new Vehicle {
+            Make = "AAA",
+            Model = "ZZZ",
+            RegDate = new DateTime(2002,02,02),
+            RegNumber = "ABC"
+        };
+    svc.AddVehicle(v1);
+
+    var v2 = new Vehicle {
+            Make = "BBB",
+            Model = "YYY",
+            RegDate = new DateTime(2001,01,01),
+            RegNumber = "DEF"
+        };
+    svc.AddVehicle(v2);
+
+    var v3 = new Vehicle {
+            Make = "CCC",
+            Model = "XXX",
+            RegDate = new DateTime(2003,03,03),
+            RegNumber = "GHI"
+        };
+    svc.AddVehicle(v3);
+    
+    //When
+    var list = svc.GetAllVehicles("RegDate");
+    
+    //Then
+    Assert.NotEmpty(list);
+    Assert.Equal(list[0], v2);
+    Assert.Equal(list[1], v1);
+    Assert.Equal(list[2], v3);
+    }
+
+    [Fact]
+    public void GetAllVehicle_WhenVehicles_ParameterFuelType_ShouldReturnListOrderedByFuelType()
+    {
+    //Given
+    var v1 = new Vehicle {
+            Make = "AAA",
+            Model = "ZZZ",
+            RegDate = new DateTime(02/02/2002),
+            FuelType= "Diesel",
+            RegNumber = "ABC"
+        };
+    svc.AddVehicle(v1);
+
+    var v2 = new Vehicle {
+            Make = "BBB",
+            Model = "YYY",
+            RegDate = new DateTime(01/01/2001),
+            FuelType = "Petrol",
+            RegNumber = "DEF"
+        };
+    svc.AddVehicle(v2);
+
+    var v3 = new Vehicle {
+            Make = "CCC",
+            Model = "XXX",
+            RegDate = new DateTime(03/03/2003),
+            FuelType = "Electric",
+            RegNumber = "GHI"
+        };
+    svc.AddVehicle(v3);
+    
+    //When
+    var list = svc.GetAllVehicles("FuelType");
+    
+    //Then
+    Assert.NotEmpty(list);
+    Assert.Equal(list[0], v1);
+    Assert.Equal(list[1], v3);
+    Assert.Equal(list[2], v2);
+    }
     // GetVehicleById Tests
 
     [Fact]

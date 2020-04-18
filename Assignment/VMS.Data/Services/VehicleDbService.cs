@@ -57,12 +57,14 @@ namespace VMS.Data.Services
             // Based on OrderBy Query Database 
             switch(orderBy)
             {
-                case "make": 
+                case "Make": 
                     return db.Vehicles.Include(v => v.Services).OrderBy(v => v.Make).ToList();
-                case "fuel": 
+                case "FuelType": 
                     return db.Vehicles.Include(v => v.Services).OrderBy(v => v.FuelType).ToList();
-                case "registered": 
+                case "RegDate": 
                     return db.Vehicles.Include(v => v.Services).OrderBy(v => v.RegDate).ToList();
+                case "Model":
+                    return db.Vehicles.Include(v => v.Services).OrderBy(v => v.Model).ToList();
                 default:
                     return db.Vehicles.Include(v => v.Services).ToList();
                     
