@@ -20,10 +20,10 @@ namespace VMS.Web.Controllers
         }// Vehicle Controller
 
         // Get /Vehicle/Index{order}
-        public IActionResult Index(String order)
+        public IActionResult Index(String orderBy)
         {
             // Retrieve list of vehicles
-            var VehicleList = svc.GetAllVehicles(order);
+            var VehicleList = svc.GetAllVehicles(orderBy);
 
             //Render a view with the list
             return View(VehicleList);
