@@ -314,16 +314,25 @@ namespace SMS.Data.Services
         public User RegisterUser(string name, string email, string password, Role role)
         {
             // call service to retrieve the user by their email address (GetUserByEmailAddress)
-
+            var User = GetUserByEmailAddress(email);
             // return null if user not found
+            if (User != null){ return null;}
 
             // create a user object and populate with method  parameters
+            User = new User
+            {
+                Name = name,
+                EmailAddress = email,
+                Role = role
+            };
             // call Hasher to encrypt the password before storing in database
-
-            // add user to database and save changes   
+            User.Password = Hasher.CalculateHash(password);
+            // add user to database and save changes
+            db.Users.Add(User);
+            db.SaveChanges();
 
             // return the newly created user    
-            return null;
+            return User;
         }
 
         /// <summary>
