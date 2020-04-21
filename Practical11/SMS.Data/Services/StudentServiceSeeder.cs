@@ -43,6 +43,10 @@ namespace SMS.Data.Services
 
             // Call service RegisterUser method to add 3 users (one for each role) 
             // admin@sms.com/admin, manager@sms.com/manager, guest@sms.com/guest
+            svc.RegisterUser("Admin", "admin@sms.com", "Password", Role.Admin);
+            svc.RegisterUser("Manager", "manager@sms.com", "Password", Role.Manager);
+            svc.RegisterUser("Guest", "guest@sms.com", "Password", Role.Guest);
+
 
         }
 
