@@ -58,17 +58,26 @@ namespace SMS.Web.Controllers
         {
             // if not valid model
             //    return View(m) to redisplay the view with validation errors
-            // endif                               
+            if(ModelState.IsValid == false)
+            {
+                return View(m);
+            }// endif                               
 
             // call service to register user
+            var user = _svc.RegisterUser(m.Name, m.EmailAddress, m.Password, m.Role);
             
             // if user returned is null then 
-            //    add a modelstate error as emailaddress must already be registered
-            //   (see how this is done in login above) and return the view for editing           
-            // endif 
- 
+            if (user ==null)
+            {
+                 //    add a modelstate error as emailaddress must already be registered
+                 ModelState.AddModelError("EmailAddress", "EmailAddress has already been used" +
+                            ". Choose another");
+                //   (see how this is done in login above) and return the view for editing  
+                return View(m);
+            }// endif 
+
             // Add alert indicating registration successful and redirect to login page
-                
+                Alert("Registration Successful - Now Login", AlertType.info);
             return RedirectToAction(nameof(Login));
         }
 
