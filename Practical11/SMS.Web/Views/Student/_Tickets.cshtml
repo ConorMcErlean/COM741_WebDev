@@ -1,0 +1,29 @@
+<h5 class="mt-2 text-info">Tickets</h5>
+<table class="table table-striped table-sm">
+    <thead class="thead-dark">
+        <tr>           
+            <th style="width: 65%">Issue</th>
+            <th style="width: 25%">Created</th>  
+            <th style="width: 10%">Active</th>       
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var t in Model.Tickets) {
+            <tr>              
+                <td>@t.Issue</td>
+                <td>@t.CreatedOn</td>  
+                <!-- asp-condtion to render done icon if Active and clear icon if inactive -->
+                <td>
+                    @if(@t.Active)
+                    {
+                        <i class="material-icons">done</i>            
+                    }
+                    else
+                    {
+                        <i class="material-icons">clear</i>  
+                    }
+                </td>
+            </tr>   
+        }
+    </tbody>
+</table>

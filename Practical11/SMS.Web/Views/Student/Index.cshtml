@@ -1,0 +1,50 @@
+﻿@model IList<Student>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Students</li>
+    </ol>
+</nav>
+
+<h3>Student List!</h3>
+
+@if (User.IsInRole(Role.Admin.ToString()))
+{
+    <div class="mt-4 mb-4">
+       <!-- add an action link styled as a button to navigate to Create Action -->
+       <a asp-action="Create" class="btn btn-primary btn-sm">Create Student</a>
+    </div>
+}
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th> <th>Name</th> <th>Course</th> <th>Age</th> <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var s in Model) {
+            <tr>
+                <td>@s.Id</td> <td>@s.Name</td> <td>@s.Course</td> <td>@s.Age</td>
+                <td>
+                    <a asp-action="Details" asp-route-id="@s.Id">
+                        <i class="material-icons" title="View Student">person_pin</i>
+                    </a> 
+                    @if (User.IsInRole(Role.Admin.ToString()) || User.IsInRole(Role.Manager.ToString())) 
+                    {
+                        <a asp-action="Edit" asp-route-id="@s.Id">
+                            <i class="material-icons" title="Edit Student">edit</i>
+                        </a> 
+                    } 
+                    @if (User.IsInRole(Role.Admin.ToString()))
+                    {
+                        <a asp-action="Delete" asp-route-id=@s.Id>
+                            <i class="material-icons" title="Delete Student">delete</i>
+                        </a>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

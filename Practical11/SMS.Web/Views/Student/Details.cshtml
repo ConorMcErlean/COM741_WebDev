@@ -1,0 +1,58 @@
+﻿@model Student
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item"><a asp-controller="Student" asp-action="Index">Students</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Details</li>
+    </ol>
+</nav>
+
+<h3 class="mt=4 mb-4">Student Details</h3>
+
+<!-- Description list of student details -->
+<dl class="row">
+    <dt class="col-sm-3">Name</dt>
+    <dd class="col-sm-9">@Model.Name</dd>
+
+    <dt class="col-sm-3">Course</dt>
+    <dd class="col-sm-9">@Model.Course</dd>
+
+    <dt class="col-sm-3">Age</dt>
+    <dd class="col-sm-9">@Model.Age</dd>
+
+    <dt class="col-sm-3">Email</dt>
+    <dd class="col-sm-9">@Model.Email</dd>
+
+    <!-- GetStudent service method Includes Profile -->
+    <dt class="col-sm-3">Grade</dt>
+    <dd class="col-sm-9">@Model.Profile.Grade</dd>
+
+</dl>
+
+<!-- Create a partial _Modules and render the StudentModules -->
+<partial name="_Modules" />
+
+<!-- Partial rendering the student tickets -->
+<partial name="_Tickets" />
+
+<!-- navigation links to create a ticket or return to Index -->
+<div class="mt-4 mb-4">
+    <!-- Create ticket only accessible to manager or admin roles -->
+    @if(User.IsInRole(Role.Admin.ToString()) || User.IsInRole(Role.Manager.ToString()))
+    {
+        <a asp-action="CreateTicket" asp-route-id=@Model.Id 
+            class="btn btn-warning btn-sm">Create Ticket
+        </a>
+        <a asp-action="CreateModule" asp-route-id=@Model.Id 
+            class="btn btn-warning btn-sm">Add Module
+        </a>
+    }
+  
+    <!-- add link to redirect to Index action -->
+    <a asp-action="Index" class="btn btn-sm btn-default">
+       Back to Student List
+    </a>
+</div>
+
+

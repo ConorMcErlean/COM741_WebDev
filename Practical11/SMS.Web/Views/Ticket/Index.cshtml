@@ -1,0 +1,51 @@
+﻿@model IList<Ticket>
+
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-controller="Home" asp-action="Index">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Open Tickets</li>
+    </ol>
+</nav>
+<h3>Open Ticket List</h3>
+
+@if(@User.IsInRole(Role.Admin.ToString()))
+{
+   <div  class="mt-4 mb-4">
+      <!-- add an action link styled button to navigate to Create Action -->
+      <a asp-action="Create" class="btn btn-primary btn-sm">Create Ticket</a>
+   </div>
+}
+
+
+<table class="table table-striped table-sm">
+    <thead class="thead-dark">
+      <tr>
+         <th>Id</th>
+         <th>Student</th>
+         <th>Issue</th>
+         <th>Created</th>           
+         <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      @foreach(var t in Model) {
+          <tr>
+            <td>@t.Id</td>
+            <td>@t.Student.Name</td>
+            <td>@t.Issue</td>
+            <td>@t.CreatedOn</td>              
+            <td>
+               <!-- submit post action to close a ticket -->
+               <form asp-action="Close" method="post">
+                 <!-- Id can be a hidden field or we could use asp-route-id=.. in form tag -->
+                 <input type="hidden" name="id" value=@t.Id />
+                 <!-- use a submit button so we can add an icon --> 
+                 <button type="submit" class="btn btn-link">
+                    <i class="material-icons" title="Close Ticket">close</i>
+                 </button>
+               </form>                                          
+            </td>
+         </tr>
+      }
+    </tbody>
+</table>
