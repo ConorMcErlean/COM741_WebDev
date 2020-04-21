@@ -53,8 +53,10 @@ namespace SMS.Web.Controllers
         }
 
         // Use antiforgery token and Bind attribute for UserViewModel
-        [HttpPost]         
-        public IActionResult Register( UserViewModel m) 
+        [HttpPost]
+        [ValidateAntiForgeryToken]         
+        public IActionResult Register([Bind("Name", "VerifyEmailAddress", "Password", 
+                        "Role")] UserViewModel m) 
         {
             // if not valid model
             //    return View(m) to redisplay the view with validation errors
