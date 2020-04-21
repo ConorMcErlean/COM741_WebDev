@@ -21,6 +21,7 @@ namespace SMS.Web.Controllers
         }
 
         // GET /student/index
+        [Authorize]
         public IActionResult Index()
         {
             var students = svc.GetAllStudents();
@@ -28,6 +29,7 @@ namespace SMS.Web.Controllers
         }
 
         // GET /student/details/{id}
+        [Authorize]
         public IActionResult Details(int id)
         {
             var student = svc.GetStudent(id);
@@ -40,7 +42,7 @@ namespace SMS.Web.Controllers
         }
 
         // GET /student/create
-        [Authorize(Roles = "Admin,Manager")]
+        [Authorize(Roles = "Admin")]
         public IActionResult Create()
         {
             // render blank form
@@ -48,7 +50,7 @@ namespace SMS.Web.Controllers
         }
 
         // POST /student/create
-        [Authorize(Roles = "Admin,Manager")]
+        [Authorize(Roles = "Admin")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public IActionResult Create([Bind("Name, Email, Course, Age")] Student s)
