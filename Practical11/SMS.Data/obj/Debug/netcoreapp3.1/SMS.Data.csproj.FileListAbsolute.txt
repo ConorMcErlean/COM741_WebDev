@@ -1,0 +1,8 @@
+D:\Work\WebDev\COM741_WebDev\Practical11\SMS.Data\bin\Debug\netcoreapp3.1\SMS.Data.deps.json
+D:\Work\WebDev\COM741_WebDev\Practical11\SMS.Data\bin\Debug\netcoreapp3.1\SMS.Data.dll
+D:\Work\WebDev\COM741_WebDev\Practical11\SMS.Data\bin\Debug\netcoreapp3.1\SMS.Data.pdb
+D:\Work\WebDev\COM741_WebDev\Practical11\SMS.Data\obj\Debug\netcoreapp3.1\SMS.Data.csprojAssemblyReference.cache
+D:\Work\WebDev\COM741_WebDev\Practical11\SMS.Data\obj\Debug\netcoreapp3.1\SMS.Data.AssemblyInfoInputs.cache
+D:\Work\WebDev\COM741_WebDev\Practical11\SMS.Data\obj\Debug\netcoreapp3.1\SMS.Data.AssemblyInfo.cs
+D:\Work\WebDev\COM741_WebDev\Practical11\SMS.Data\obj\Debug\netcoreapp3.1\SMS.Data.dll
+D:\Work\WebDev\COM741_WebDev\Practical11\SMS.Data\obj\Debug\netcoreapp3.1\SMS.Data.pdb

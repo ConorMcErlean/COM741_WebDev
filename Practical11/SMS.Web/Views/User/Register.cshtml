@@ -2,37 +2,48 @@
 
 <h3 class="mt-4 mb-4">Create Account</h3>
 
-<form asp-action="Register" method="post">
+<form asp-action="Register" asp-controller="User" method="post">
     <!-- Q2 Complete this form to gather details for -->
+   
+   <div class="row">
    <!-- Name -->
-    <div>
-        <label asp-for="Name"></label>
-        <input type="text" asp-for="Name" />
+    <div class="col-6">
+        <label asp-for="Name" class="control-label"></label>
+        <input type="text" asp-for="Name" class="form-control"/>
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
     </div>
    <!-- Email -->
-   <div>
-        <label asp-for="EmailAddress"></label>
-        <input type="email" asp-for="EmailAddress" />
+   <div class="col-6">
+        <label asp-for="EmailAddress" class="control-label"></label>
+        <input type="text" asp-for="EmailAddress" class="form-control"/>
+        <span asp-validation-for="EmailAddress" class="text-danger"></span>
+    </div>
     </div>
    <!-- Password -->
-   <div>
-        <label asp-for="Password"></label>
-        <input type="text" asp-for="Password" />
+   <div class="row">
+   <div class="col-6">
+        <label asp-for="Password" class="control-label"></label>
+        <input type="password" asp-for="Password" class="form-control"/>
+        <span asp-validation-for="Password" class="text-danger"></span>
     </div>
    <!-- PasswordConfirm -->
-   <div>
-        <label asp-for="PasswordConfirm"></label>
-        <input type="text" asp-for="PasswordConfirm" />
+   <div class="col-6">
+        <label asp-for="PasswordConfirm" class="control-label"></label>
+        <input type="password" asp-for="PasswordConfirm" class="form-control" />
+        <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
+    </div>
     </div>
    <!-- Role -->
    <div>
-        <label asp-for="Role"></label>
-        <input type="text" asp-for="Role" />
+        <label asp-for="Role" class="control-label"></label>
+        <select asp-for="Role" asp-items="Html.GetEnumSelectList<Role>()" class="form-control">
+        </select>
+        <span asp-validation-for="Role" class="text-danger"></span>
     </div>
 
    <!-- Submit and cancel -->
-   <button class= "btn btn-primary" type="submit">Submit</button>
-   <a class= "btn btn-secondard" asp-asp-controller="User" asp-action="Login">Cancel</a>
+   <button class= "btn btn-primary" type="submit" value="Register">Submit</button>
+   <a class= "btn btn-secondard" asp-asp-controller="Home" asp-action="Index">Cancel</a>
    
 
 </form>
