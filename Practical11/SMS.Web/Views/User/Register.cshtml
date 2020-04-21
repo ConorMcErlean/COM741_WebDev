@@ -3,15 +3,37 @@
 <h3 class="mt-4 mb-4">Create Account</h3>
 
 <form asp-action="Register" method="post">
-   
-   <!-- Q2 Complete this form to gather details for -->
+    <!-- Q2 Complete this form to gather details for -->
    <!-- Name -->
+    <div>
+        <label asp-for="Name"></label>
+        <input type="text" asp-for="Name" />
+    </div>
    <!-- Email -->
+   <div>
+        <label asp-for="EmailAddress"></label>
+        <input type="email" asp-for="EmailAddress" />
+    </div>
    <!-- Password -->
+   <div>
+        <label asp-for="Password"></label>
+        <input type="text" asp-for="Password" />
+    </div>
    <!-- PasswordConfirm -->
+   <div>
+        <label asp-for="PasswordConfirm"></label>
+        <input type="text" asp-for="PasswordConfirm" />
+    </div>
    <!-- Role -->
+   <div>
+        <label asp-for="Role"></label>
+        <input type="text" asp-for="Role" />
+    </div>
 
    <!-- Submit and cancel -->
+   <button class= "btn btn-primary" type="submit">Submit</button>
+   <a class= "btn btn-secondard" asp-asp-controller="User" asp-action="Login">Cancel</a>
+   
 
 </form>
 
