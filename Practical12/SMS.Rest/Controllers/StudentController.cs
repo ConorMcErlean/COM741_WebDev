@@ -55,7 +55,7 @@ namespace SMS.Rest.Controllers
             }
             return NotFound();
         }//Delete
-        [HttpPut]
+        [HttpPut("{id}")]
         public IActionResult Update(int id, StudentDto s)
         {
             var updated = new Student
