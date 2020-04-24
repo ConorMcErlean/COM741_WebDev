@@ -26,12 +26,13 @@ namespace SMS.Rest.Controllers
         {
             return Ok(_service.GetAllStudents());
         }
+        [Authorize]
         [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             return Ok(_service.GetStudent(id));
         }
-
+        [Authorize(Roles="Admin")]
         [HttpPost]
         public IActionResult Create(StudentDto s)
         {
@@ -45,6 +46,7 @@ namespace SMS.Rest.Controllers
             }
             return BadRequest(ModelState);
         }//Create
+        [Authorize(Roles="Admin")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -55,6 +57,7 @@ namespace SMS.Rest.Controllers
             }
             return NotFound();
         }//Delete
+        [Authorize(Roles="Admin, Manager")]
         [HttpPut("{id}")]
         public IActionResult Update(int id, StudentDto s)
         {
