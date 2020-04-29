@@ -73,12 +73,13 @@ namespace VMS.Web.Controllers
 
         // Post /Vehicle/Edit/{Id}
         [HttpPost]
-        public IActionResult Edit(Vehicle v)
+        public IActionResult Edit(int id, Vehicle v)
         {
             if (ModelState.IsValid)
             {
-                svc.UpdateVehicle(v.Id, v);
-                RedirectToAction("Details", new {id = v.Id});
+                svc.UpdateVehicle(id, v);
+                // RedirectToAction("Details", new {id = v.Id});
+                return RedirectToAction(nameof(Index));
             }
             return View(v);
         }
