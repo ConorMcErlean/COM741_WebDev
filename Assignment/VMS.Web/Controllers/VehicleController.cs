@@ -102,22 +102,37 @@ namespace VMS.Web.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // Get /Vehicle/AddService
+        // Get /Vehicle/AddService/{VehicleID}
         public IActionResult AddService(int VehicleId)
         {
-            return View(VehicleId);
+            var Vehicle = svc.GetVehicleById(VehicleId);
+            if (Vehicle == null){return NotFound();}
+            var svm = new ServiceViewModel{VehicleID = Vehicle.Id};
+            
+            // Return Form with ViewModel
+            return View(svm);
         }
 
-        // Post /Vehicle/AddService
+        // Post /Vehicle/AddService/{VehicleId}
         [HttpPost]
-        public IActionResult AddService(int VehicleId, Service s)
+        public IActionResult AddService(ServiceViewModel svm)
         {
             if (ModelState.IsValid)
             {
+                var s = new Service
+                {
+                    Vehicle = svc.GetVehicleById(svm.VehicleID),
+                    VehicleID = svm.VehicleID,
+                    CarriedOutBy = svm.CarriedOutBy,
+                    DateOfService = svm.DateOfService,
+                    CurrentMilage = svm.CurrentMilage,
+                    WorkDescription = svm.WorkDescription,
+                    Cost = svm.Cost
+                };
                 svc.AddService(s);
                 return RedirectToAction(nameof(Index));
             }
-            return View(s);
+            return View(svm);
         }
 
         // Get Vehicle/DeleteService
