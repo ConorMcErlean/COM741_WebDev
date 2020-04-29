@@ -15,9 +15,9 @@ The Coursework project is primarily built by myself, so is likely the strongest 
 1.	~~Browse through a list of vehicles~~
 2.	~~Provide option to order list of vehicles by make, fuel type or date of registration~~
 3.	~~View a specific Vehicle (selected by Id) displaying its details and associated list of service records~~
-4.	Add a new Vehicle to the Fleet
-5.	Edit an existing Vehicle (selected by Id)
-6.	Delete an existing Vehicle (selected by Id) and its related service records
-7.	Add/delete a service record to/from the currently selected Vehicle
+4.	~~~Add a new Vehicle to the Fleet~~~
+5.	~~~Edit an existing Vehicle (selected by Id)~~~
+6.	~~~Delete an existing Vehicle (selected by Id) and its related service records~~~
+7.	~~~Add/delete a service record to/from the currently selected Vehicle~~~
 8.	Providing suitable validation when creating/editing a Vehicle or adding a Service record.
 9.	Ensure the application utilises best practice in user experience design (UX) and employs a responsive UI that will work across a range of devices.
