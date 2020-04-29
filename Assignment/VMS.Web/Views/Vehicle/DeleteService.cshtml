@@ -1,0 +1,22 @@
+@model Service
+
+<h3>Delete Service</h3>
+<div class="alert alert-danger" role="alert"> Are you sure you want to delete? </div>
+
+<dl>
+    <dt>Carried Out By</dt><dd>@Model.CarriedOutBy</dd>
+    <dt>Date Of Service</dt><dd>@Model.DateOfService.ToShortDateString()</dd>
+    <dt>Description</dt><dd>@Model.WorkDescription</dd>
+    <dt>Milage at Service</dt><dd>@Model.CurrentMilage</dd>
+    <dt>Cost of Service</dt><dd>£@Model.Cost</dd>
+
+    <form asp-action="DeleteServiceConfirm">
+        <input type="hidden" asp-for="ServiceId" class="form-control" />
+        <div class="form-group">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <a class="btn btn-secondary" asp-action="Details" asp-route-id="@Model.VehicleID">Cancel</a>
+        </div>
+    </form>
+</dl>
+
+

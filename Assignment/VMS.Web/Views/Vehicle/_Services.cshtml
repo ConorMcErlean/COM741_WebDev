@@ -1,0 +1,34 @@
+@model Vehicle
+
+<h3 class="mt-4 mb-4">Vehicle Services</h3>
+
+<table class="table table-sm">
+    <thead>
+        <tr>
+            <th>Service ID</th>
+            <th>Carried out by</th>
+            <th>Date of Service</th>
+            <th>Work Description</th>
+            <th>Milage at Service</th>
+            <th>Service Cost</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var S in Model.Services)
+        {
+            <tr>
+                <td>@S.ServiceId</td>
+                <td>@S.CarriedOutBy</td>
+                <td>@S.DateOfService.ToShortDateString()</td>
+                <td>@S.WorkDescription</td>
+                <td>@S.CurrentMilage</td>
+                <td>£@S.Cost</td>
+                <td><a asp-action="DeleteService" asp-route-id="@S.ServiceId">Delete</a></td>
+
+            </tr>
+        }
+
+    </tbody>
+</table>
+

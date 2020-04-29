@@ -1,0 +1,46 @@
+@model IList<Vehicle>
+
+
+<h3>All Vehicles</h3>
+
+<a type="button" class="btn btn-secondary" asp-action="Create">Add Vehicle</a>
+
+<table class="table table-striped">
+    <thead>
+        <!-- Heading of table, Adjust based on how much is to be shown -->
+        <tr>
+            <th><a asp-action="Index" asp-route-orderBy="">Id</a></th>
+            <th><a asp-action="Index" asp-route-orderBy="Make">Make</a></th>
+            <th><a asp-action="Index" asp-route-orderBy="Model">Model</a></th>
+            <th><a asp-action="Index" asp-route-orderBy="RegDate">Year</a></th>
+            <th><a asp-action="Index" asp-route-orderBy="FuelType">Fuel Type</a></th>
+            <th>Image</th>
+            <th>Options</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var v in Model)
+        {
+            // Row Details
+            <tr>
+               <td>@v.Id</td>
+               <td>@v.Make</td>
+               <td>@v.Model</td>
+               <td>@v.RegDate.Year</td>
+               <td>@v.FuelType</td>
+               <td>
+                   <!-- Image -->
+                   <img src="@v.Photo" class="img-fluid" alt="Image of @v.Make @v.Model in @v.Colour">
+               </td>
+               <td>
+                   <!-- Function Buttons --> 
+                   <a type="button" class="btn btn-primary" asp-action="Details" asp-route-id=@v.Id>Details</a>
+
+                   <a type="button" class="btn btn-secondary" asp-action="Edit" asp-route-id="@v.Id">Edit</a>
+
+                   <a type="button" class="btn btn-secondary" asp-action="Delete" asp-route-id="@v.Id">Delete</a>
+               </td>
+            </tr>
+        }
+    </tbody>
+</table>
