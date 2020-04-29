@@ -7,9 +7,11 @@
     <div class="col-6">
         <!-- Image -->
         <img src="@Model.Photo" class="img-fluid" alt="Image of @Model.Make @Model.Model in @Model.Colour">
-        <dt>Make</dt><dd>@Model.Make</dd>
-        <dt>Model</dt><dd>@Model.Model</dd>
-        <dt>Fuel Type</dt><dd>@Model.FuelType</dd>
+        <dl>
+            <dt>Make</dt><dd>@Model.Make</dd>
+            <dt>Model</dt><dd>@Model.Model</dd>
+            <dt>Fuel Type</dt><dd>@Model.FuelType</dd>
+        </dl>
     </div>
 
     <div class="col-6">
@@ -33,6 +35,9 @@
             <a class="btn btn-secondary" asp-action="Index">Cancel</a>
         </div>
     </form>
+</div>
+<div class="alert alert-danger" role="alert">
+  All service records of this vehicle will also be deleted.
 </div>
 
 <!-- Partial To Render Service Record -->

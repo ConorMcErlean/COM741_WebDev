@@ -133,9 +133,9 @@ namespace VMS.Web.Controllers
 
         // Post Vehicle/DeleteServiceConfirm
         [HttpPost]
-        public IActionResult DeleteServiceConfirm(int id)
+        public IActionResult DeleteServiceConfirm(int ServiceId)
         {
-            svc.DeleteService(id);
+            svc.DeleteService(ServiceId);
             return RedirectToAction(nameof(Index));
         }
     }// Vehicle Controller
