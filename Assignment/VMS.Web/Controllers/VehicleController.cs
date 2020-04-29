@@ -105,34 +105,22 @@ namespace VMS.Web.Controllers
         // Get /Vehicle/AddService/{VehicleID}
         public IActionResult AddService(int VehicleId)
         {
-            var Vehicle = svc.GetVehicleById(VehicleId);
-            if (Vehicle == null){return NotFound();}
-            var svm = new ServiceViewModel{VehicleID = Vehicle.Id};
-            
+            var s = new Service{VehicleID = VehicleId};
             // Return Form with ViewModel
-            return View(svm);
+            return View(s);
         }
 
         // Post /Vehicle/AddService/{VehicleId}
         [HttpPost]
-        public IActionResult AddService(ServiceViewModel svm)
+        public IActionResult AddService(Service s)
         {
             if (ModelState.IsValid)
             {
-                var s = new Service
-                {
-                    Vehicle = svc.GetVehicleById(svm.VehicleID),
-                    VehicleID = svm.VehicleID,
-                    CarriedOutBy = svm.CarriedOutBy,
-                    DateOfService = svm.DateOfService,
-                    CurrentMilage = svm.CurrentMilage,
-                    WorkDescription = svm.WorkDescription,
-                    Cost = svm.Cost
-                };
+                s.Vehicle = svc.GetVehicleById(s.VehicleID);
                 svc.AddService(s);
                 return RedirectToAction(nameof(Index));
             }
-            return View(svm);
+            return View(s);
         }
 
         // Get Vehicle/DeleteService
