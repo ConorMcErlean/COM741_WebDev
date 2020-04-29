@@ -35,8 +35,12 @@ namespace VMS.Web.Controllers
             // Retrieve required vehicle
             var Vehicle = svc.GetVehicleById(id);
 
-            // Render view with vehicle
-            return View(Vehicle);
+            if (Vehicle != null)
+            {
+                // Render view with vehicle
+                return View(Vehicle);
+            }
+            return NotFound();
         }
 
         // Get / Vehicle/Create
@@ -54,6 +58,27 @@ namespace VMS.Web.Controllers
             {
                 svc.AddVehicle(v);
                 return RedirectToAction(nameof(Index));
+            }
+            return View(v);
+        }
+
+        // Get /Vehicle/Edit/{Id}
+        public IActionResult Edit(int Id){
+            var Vehicle = svc.GetVehicleById(Id);
+            if (Vehicle != null){
+                return View(Vehicle);
+            }
+            return NotFound();
+        }
+
+        // Post /Vehicle/Edit/{Id}
+        [HttpPost]
+        public IActionResult Edit(Vehicle v)
+        {
+            if (ModelState.IsValid)
+            {
+                svc.UpdateVehicle(v.Id, v);
+                RedirectToAction("Details", new {id = v.Id});
             }
             return View(v);
         }
