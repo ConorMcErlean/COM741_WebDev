@@ -44,7 +44,7 @@ namespace SMS.Rest.Controllers
         }
 
         [HttpPost] 
-        [Authorize(Roles="Admin,Manager")]   
+        //[Authorize(Roles="Admin,Manager")]   
         public IActionResult create(CreateTicketDto m)
         {
             if (ModelState.IsValid)

@@ -10,7 +10,7 @@ using SMS.Rest.Dtos;
 namespace SMS.Rest.Controllers
 {
 
-    [ApiController]ic
+    [ApiController]
     [Route("api/[controller]")]
     public class StudentController : ControllerBase
     {
@@ -26,26 +26,27 @@ namespace SMS.Rest.Controllers
         {
             return Ok(_service.GetAllStudents());
         }
-        [HttpGet]
+        [Authorize]
+        [HttpGet("{id}")]
         public IActionResult Get(int id)
         {
             return Ok(_service.GetStudent(id));
         }
-
+        [Authorize(Roles="Admin")]
         [HttpPost]
         public IActionResult Create(StudentDto s)
         {
-
             if (ModelState.IsValid)
             {
                 var Student = _service.AddStudent(s.Name, s.Email, s.Course, s.Age, s.Grade);
                 if (Student != null)
                 {
-                    CreatedAtAction(nameof(Get), new {Id = Student.Id}, Student);
+                    return CreatedAtAction(nameof(Get), new {Id = Student.Id}, Student);
                 }
             }
             return BadRequest(ModelState);
         }//Create
+        [Authorize(Roles="Admin")]
         [HttpDelete("{id}")]
         public IActionResult Delete(int id)
         {
@@ -56,15 +57,25 @@ namespace SMS.Rest.Controllers
             }
             return NotFound();
         }//Delete
-        [HttpPut]
+        [Authorize(Roles="Admin, Manager")]
+        [HttpPut("{id}")]
         public IActionResult Update(int id, StudentDto s)
         {
-            var result = _service.UpdateStudent(id, s);
+            var updated = new Student
+            {
+            Name = s.Name, 
+            Email = s.Email, 
+            Course = s.Course,
+            Age = s.Age,
+            Id = s.Id,
+            Profile = new Profile{ Grade = s.Grade}
+            };
+            var result = _service.UpdateStudent(id, updated);
             if (result != null)
             {
                 return Ok(_service.GetStudent(id));
             }
             return NotFound();
         }//Update
-    }
-}
+    }// Class
+}// Namespace
