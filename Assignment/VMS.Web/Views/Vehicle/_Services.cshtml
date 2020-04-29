@@ -11,6 +11,7 @@
             <th>Work Description</th>
             <th>Milage at Service</th>
             <th>Service Cost</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
@@ -23,6 +24,7 @@
                 <td>@S.WorkDescription</td>
                 <td>@S.CurrentMilage</td>
                 <td>£@S.Cost</td>
+                <td><a asp-action="DeleteService" asp-route-id="@S.ServiceId">Delete</a></td>
 
             </tr>
         }

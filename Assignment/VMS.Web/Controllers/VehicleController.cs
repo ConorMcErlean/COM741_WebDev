@@ -101,6 +101,43 @@ namespace VMS.Web.Controllers
             svc.DeleteVehicle(id);  
             return RedirectToAction(nameof(Index));
         }
+
+        // Get /Vehicle/AddService
+        public IActionResult AddService(int VehicleId)
+        {
+            return View(VehicleId);
+        }
+
+        // Post /Vehicle/AddService
+        [HttpPost]
+        public IActionResult AddService(int VehicleId, Service s)
+        {
+            if (ModelState.IsValid)
+            {
+                svc.AddService(s);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(s);
+        }
+
+        // Get Vehicle/DeleteService
+        public IActionResult DeleteService(int id)
+        {
+            var Service = svc.GetServiceById(id);
+            if (Service == null)
+            {
+                return NotFound();
+            }
+            return View(Service);
+        }
+
+        // Post Vehicle/DeleteServiceConfirm
+        [HttpPost]
+        public IActionResult DeleteServiceConfirm(int id)
+        {
+            svc.DeleteService(id);
+            return RedirectToAction(nameof(Index));
+        }
     }// Vehicle Controller
 
 }
