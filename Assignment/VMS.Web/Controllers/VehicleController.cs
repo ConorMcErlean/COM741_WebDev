@@ -83,6 +83,24 @@ namespace VMS.Web.Controllers
             }
             return View(v);
         }
+
+        // Get /Vehicle/Delete/{Id}
+        public IActionResult Delete(int id)
+        {
+            var ToDelete = svc.GetVehicleById(id);
+            if (ToDelete == null){
+                return NotFound();
+            }
+            return View(ToDelete);
+        }
+
+        // Post /Vehicle/Delete
+        [HttpPost]
+        public IActionResult ConfirmDelete(int id)
+        {
+            svc.DeleteVehicle(id);  
+            return RedirectToAction(nameof(Index));
+        }
     }// Vehicle Controller
 
 }
