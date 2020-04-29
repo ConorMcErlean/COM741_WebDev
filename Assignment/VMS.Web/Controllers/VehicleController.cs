@@ -38,6 +38,25 @@ namespace VMS.Web.Controllers
             // Render view with vehicle
             return View(Vehicle);
         }
+
+        // Get / Vehicle/Create
+        public IActionResult Create()
+        {
+            // Render Form
+            return View();
+        }
+
+        // Post /Vehicle/Create
+        [HttpPost]
+        public IActionResult Create(Vehicle v)
+        {
+            if (ModelState.IsValid)
+            {
+                svc.AddVehicle(v);
+                return RedirectToAction(nameof(Index));
+            }
+            return View(v);
+        }
     }// Vehicle Controller
 
 }
