@@ -87,11 +87,11 @@ namespace VMS.Web.Controllers
         // Get /Vehicle/Delete/{Id}
         public IActionResult Delete(int id)
         {
-            var ToDelete = svc.GetVehicleById(id);
-            if (ToDelete == null){
+            var vehicle = svc.GetVehicleById(id);
+            if (vehicle == null){
                 return NotFound();
             }
-            return View(ToDelete);
+            return View(vehicle);
         }
 
         // Post /Vehicle/Delete
