@@ -15,13 +15,14 @@
     <thead>
         <!-- Heading of table, Adjust based on how much is to be shown -->
         <tr>
-            <th class="col-1"><a asp-action="Index" asp-route-orderBy="">Id</a></th>
-            <th class="col-1"><a asp-action="Index" asp-route-orderBy="Make">Make</a></th>
-            <th class="col-1"><a asp-action="Index" asp-route-orderBy="Model">Model</a></th>
-            <th class="col-1"><a asp-action="Index" asp-route-orderBy="RegDate">Year</a></th>
-            <th class="col-1"><a asp-action="Index" asp-route-orderBy="FuelType">Fuel</a></th>
-            <th class="col-4 text-center">Image</th>
-            <th class="col-3">Options</th>
+       
+            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="">Id</a></th></div>
+            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="Make">Make</a></th></div>
+            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="Model">Model</a></th></div>
+            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="RegDate">Year</a></th></div>
+            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="FuelType">Fuel</a></th></div>
+            <div class="col-4"><th class="text-center">Image</th></div>
+            <div class="col-3"><th>Options</th></div>
         </tr>
     </thead>
     <tbody>
@@ -43,10 +44,11 @@
                <td >
                    
                    <!-- Function Buttons --> 
-                   <a class="material-icons p-1" asp-action="Details" asp-route-id=@v.Id>short_text</a>
-                   <a class="material-icons p-1" asp-action="Edit" asp-route-id="@v.Id">create</a>
-                   <a class="material-icons p-1" asp-action="Delete" asp-route-id="@v.Id">remove_circle_outline</a>
-                   
+                   <div class="row">
+                    <div class="col-1"><a class="material-icons p-1" asp-action="Details" asp-route-id=@v.Id>short_text</a></div>
+                    <div class="col-1"><a class="material-icons p-1" asp-action="Edit" asp-route-id="@v.Id">create</a></div>
+                    <div class="col-1"><a class="material-icons p-1" asp-action="Delete" asp-route-id="@v.Id">remove_circle_outline</a></div>
+                   </div>
                </td>
             </tr>
         }
