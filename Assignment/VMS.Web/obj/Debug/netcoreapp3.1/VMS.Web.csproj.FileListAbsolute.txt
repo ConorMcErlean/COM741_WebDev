@@ -78,3 +78,8 @@ D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\VMS.Web.
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Index.cshtml.g.cs
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Details.cshtml.g.cs
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\_Services.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\AddService.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Create.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Delete.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\DeleteService.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Edit.cshtml.g.cs

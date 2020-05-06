@@ -20541,8 +20541,23 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Vehicle\\DeleteService.cshtml",
+      "TargetPath": "Views\\Vehicle\\DeleteService.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Vehicle\\Create.cshtml",
+      "TargetPath": "Views\\Vehicle\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Vehicle\\Details.cshtml",
       "TargetPath": "Views\\Vehicle\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Vehicle\\Edit.cshtml",
+      "TargetPath": "Views\\Vehicle\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -20561,8 +20576,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Vehicle\\Delete.cshtml",
+      "TargetPath": "Views\\Vehicle\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Vehicle\\AddService.cshtml",
+      "TargetPath": "Views\\Vehicle\\AddService.cshtml",
       "FileKind": "mvc"
     },
     {
