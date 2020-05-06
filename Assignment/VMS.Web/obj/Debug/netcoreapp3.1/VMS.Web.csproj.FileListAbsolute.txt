@@ -62,7 +62,6 @@ D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\VMS.Web.
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\VMS.Web.TagHelpers.output.cache
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\VMS.Web.RazorCoreGenerate.cache
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
-D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Privacy.cshtml.g.cs
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\Error.cshtml.g.cs
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_CookieConsentPartial.cshtml.g.cs
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_Layout.cshtml.g.cs
@@ -78,3 +77,10 @@ D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\VMS.Web.
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Index.cshtml.g.cs
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Details.cshtml.g.cs
 D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\_Services.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\AddService.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Create.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Delete.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\DeleteService.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Vehicle\Edit.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Shared\_RenderAlert.cshtml.g.cs
+D:\Work\WebDev\COM741_WebDev\Assignment\VMS.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\About.cshtml.g.cs

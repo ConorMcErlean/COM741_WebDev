@@ -1,5 +1,13 @@
 @model Vehicle
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-asp-controller="Home" asp-action="Index" asp-route-orderBy="">Home</a></li>
+    <li class="breadcrumb-item"><a asp-asp-controller="Vehicle" asp-action="Index" asp-route-orderBy="">Vehicles</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+  </ol>
+</nav>
+
 <h3 class="mt-4 mb-4">Edit Vehicle </h3>
 
 
@@ -28,7 +36,7 @@
             <!-- Fuel Type -->
             <div class="col-4">
                 <div class="form-group">
-                <label asp-for="FuelType" class="control-label"></label>
+                <label asp-for="FuelType" class="control-label">Fuel Type</label>
                 <input asp-for="FuelType" class="form-control"/>
                 <span asp-validation-for="FuelType" class="text-danger"></span>
                 </div>
@@ -48,7 +56,7 @@
             <!-- RegDate -->
             <div class="col-4">
                 <div class="form-group">
-                <label asp-for="RegDate" class="control-label"></label>
+                <label asp-for="RegDate" class="control-label">Date of Registration</label>
                 <input asp-for="RegDate" class="form-control"/>
                 <span asp-validation-for="RegDate" class="text-danger"></span>
                 </div>
@@ -56,7 +64,7 @@
             <!-- RegNumber -->
             <div class="col-4">
                 <div class="form-group">
-                <label asp-for="RegNumber" class="control-label"></label>
+                <label asp-for="RegNumber" class="control-label">Registration Number</label>
                 <input asp-for="RegNumber" class="form-control"/>
                 <span asp-validation-for="RegNumber" class="text-danger"></span>
                 </div>
@@ -67,7 +75,7 @@
             <!-- Transmission Type -->
             <div class="col-3">
                 <div class="form-group">
-                <label asp-for="TransmissionType" class="control-label"></label>
+                <label asp-for="TransmissionType" class="control-label">Transmission Type</label>
                 <input asp-for="TransmissionType" class="form-control"/>
                 <span asp-validation-for="TransmissionType" class="text-danger"></span>
                 </div>
@@ -75,7 +83,7 @@
             <!-- CO2 Rating -->
             <div class="col-3">
                 <div class="form-group">
-                <label asp-for="CO2Rating" class="control-label"></label>
+                <label asp-for="CO2Rating" class="control-label">CO2 Rating</label>
                 <input asp-for="CO2Rating" class="form-control"/>
                 <span asp-validation-for="CO2Rating" class="text-danger"></span>
                 </div>
@@ -83,7 +91,7 @@
             <!-- Body Type -->
             <div class="col-3">
                 <div class="form-group">
-                <label asp-for="BodyType" class="control-label"></label>
+                <label asp-for="BodyType" class="control-label">Body Type</label>
                 <input asp-for="BodyType" class="form-control"/>
                 <span asp-validation-for="BodyType" class="text-danger"></span>
                 </div>

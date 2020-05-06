@@ -2,6 +2,8 @@
 
 <h3 class="mt-4 mb-4">Vehicle Services</h3>
 
+<a class="material-icons" asp-action="AddService" asp-route-vehicleId="@Model.Id">add_circle_outline</a>
+
 <table class="table table-sm">
     <thead>
         <tr>
@@ -24,7 +26,7 @@
                 <td>@S.WorkDescription</td>
                 <td>@S.CurrentMilage</td>
                 <td>£@S.Cost</td>
-                <td><a asp-action="DeleteService" asp-route-id="@S.ServiceId">Delete</a></td>
+                <td><a class="material-icons" asp-action="DeleteService" asp-route-id="@S.ServiceId">clear</a></td>
 
             </tr>
         }

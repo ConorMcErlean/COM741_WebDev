@@ -1,5 +1,14 @@
 @model Service
 
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a asp-asp-controller="Home" asp-action="Index" asp-route-orderBy="">Home</a></li>
+    <li class="breadcrumb-item"><a asp-asp-controller="Vehicle" asp-action="Index" asp-route-orderBy="">Vehicles</a></li>
+    <li class="breadcrumb-item"><a asp-asp-controller="Vehicle" asp-action="Details" asp-route-id="@Model.VehicleID">Details</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Add Service</li>
+  </ol>
+</nav>
+
 <h3>Add Service Record</h3>
 
 <form asp-action="AddService">
@@ -29,7 +38,7 @@
         <div class="col-3">
             <div class="form-group">
             <label asp-for="DateOfService" class="control-label">Date of Service</label>
-            <input asp-for="DateOfService" class="form-control"/>
+            <input asp-for="DateOfService" class="form-control" placeholder="yyyy/mm/dd" />
             <span asp-validation-for="DateOfService" class="text-danger"></span>
             </div>
         </div>
