@@ -125,8 +125,8 @@ namespace VMS.Web.Controllers
             {
                 s.Vehicle = svc.GetVehicleById(s.VehicleID);
                 svc.AddService(s);
-                Alert("Vehicle Created", AlertType.success);
-                return RedirectToAction(nameof(Index));
+                Alert("Service Created", AlertType.success);
+                return RedirectToAction("Details", new {id = s.VehicleID});
             }
             return View(s);
         }
