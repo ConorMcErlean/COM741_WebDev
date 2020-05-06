@@ -20531,6 +20531,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Shared\\_RenderAlert.cshtml",
+      "TargetPath": "Views\\Shared\\_RenderAlert.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Shared\\_Layout.cshtml",
       "TargetPath": "Views\\Shared\\_Layout.cshtml",
       "FileKind": "mvc"
