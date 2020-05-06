@@ -10,7 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace VMS.Web.Controllers
 {
 
- public class VehicleController : Controller
+ public class VehicleController : BaseController
     {
         // Service to carry out buisness logic
         private readonly IVehicleService svc;
@@ -40,7 +40,8 @@ namespace VMS.Web.Controllers
                 // Render view with vehicle
                 return View(Vehicle);
             }
-            return NotFound();
+            Alert("Vehicle Not Found", AlertType.warning);
+            return RedirectToAction(nameof(Index));
         }
 
         // Get / Vehicle/Create
@@ -57,6 +58,7 @@ namespace VMS.Web.Controllers
             if (ModelState.IsValid)
             {
                 svc.AddVehicle(v);
+                Alert("Vehicle Created!", AlertType.success);
                 return RedirectToAction(nameof(Index));
             }
             return View(v);
@@ -68,7 +70,8 @@ namespace VMS.Web.Controllers
             if (Vehicle != null){
                 return View(Vehicle);
             }
-            return NotFound();
+            Alert("Vehicle Not Found", AlertType.warning);
+            return RedirectToAction(nameof(Index));
         }
 
         // Post /Vehicle/Edit/{Id}
@@ -79,6 +82,7 @@ namespace VMS.Web.Controllers
             {
                 svc.UpdateVehicle(id, v);
                 // RedirectToAction("Details", new {id = v.Id});
+                Alert("Vehicle Updated", AlertType.success);
                 return RedirectToAction(nameof(Index));
             }
             return View(v);
@@ -89,8 +93,10 @@ namespace VMS.Web.Controllers
         {
             var vehicle = svc.GetVehicleById(id);
             if (vehicle == null){
-                return NotFound();
+                Alert("Vehicle Not Found", AlertType.warning);
+                return RedirectToAction(nameof(Index));
             }
+            Alert("Vehicle will Be permanently deleted, are you sure?", AlertType.danger);
             return View(vehicle);
         }
 
@@ -99,6 +105,7 @@ namespace VMS.Web.Controllers
         public IActionResult ConfirmDelete(int id)
         {
             svc.DeleteVehicle(id);  
+            Alert("Vehicle Deleted.", AlertType.success);
             return RedirectToAction(nameof(Index));
         }
 
@@ -118,6 +125,7 @@ namespace VMS.Web.Controllers
             {
                 s.Vehicle = svc.GetVehicleById(s.VehicleID);
                 svc.AddService(s);
+                Alert("Vehicle Created", AlertType.success);
                 return RedirectToAction(nameof(Index));
             }
             return View(s);
@@ -129,8 +137,12 @@ namespace VMS.Web.Controllers
             var Service = svc.GetServiceById(id);
             if (Service == null)
             {
-                return NotFound();
+                Alert("Service Not Found", AlertType.warning);
+                return RedirectToAction(nameof(Index));
+                // Should Be Details
+                //return NotFound();
             }
+            Alert("Service will be permanently deleted. Are you sure?", AlertType.danger);
             return View(Service);
         }
 
