@@ -20576,11 +20576,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Home\\Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Vehicle\\Delete.cshtml",
       "TargetPath": "Views\\Vehicle\\Delete.cshtml",
       "FileKind": "mvc"
@@ -20588,6 +20583,11 @@
     {
       "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "d:\\Work\\WebDev\\COM741_WebDev\\Assignment\\VMS.Web\\Views\\Home\\About.cshtml",
+      "TargetPath": "Views\\Home\\About.cshtml",
       "FileKind": "mvc"
     },
     {
