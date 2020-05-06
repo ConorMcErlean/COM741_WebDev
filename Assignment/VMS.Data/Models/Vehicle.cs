@@ -20,10 +20,10 @@ namespace VMS.Data.Models
         private int _age;
         public int Age 
         {   
-            get { return _age; }
-            set {
-                _age = (int) ((DateTime.Now - RegDate).TotalDays)/365;
-            }
+            get { 
+                    _age = (int) ((DateTime.Now - RegDate).TotalDays)/365;
+                    return _age;
+                 }
         }// age
         public string TransmissionType {get; set;}
         [Range(0, 300)]
