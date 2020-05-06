@@ -9,48 +9,56 @@
 
 <h3>All Vehicles</h3>
 
-<a class="material-icons" asp-action="Create">add_circle_outline</a>
 
-<table class="table table-striped">
-    <thead>
-        <!-- Heading of table, Adjust based on how much is to be shown -->
-        <tr>
-       
-            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="">Id</a></th></div>
-            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="Make">Make</a></th></div>
-            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="Model">Model</a></th></div>
-            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="RegDate">Year</a></th></div>
-            <div class="col-1"><th><a asp-action="Index" asp-route-orderBy="FuelType">Fuel</a></th></div>
-            <div class="col-4"><th class="text-center">Image</th></div>
-            <div class="col-3"><th>Options</th></div>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var v in Model)
-        {
-            // Row Details
-            <tr>
+<!-- Nav Bar To Change Order By -->
+<ul class="nav nav-tabs justify-content-center">
+    <li class="nav-item">
+        <a class="nav-link" asp-action="Index" asp-route-orderBy="">Id</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="Index" asp-route-orderBy="Make">Make</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="Index" asp-route-orderBy="Model">Model</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="Index" asp-route-orderBy="RegDate">Year</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-action="Index" asp-route-orderBy="FuelType">Fuel</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link material-icons" asp-action="Create">add_circle_outline</a>
+    </li>
+</ul>
+</br>
+
+<!-- List of Cards -->
+<div class="card-columns">
+    @foreach (var v in Model)
+    {
+        <div class="card" style="width: 18rem;">
+            <img src="@v.Photo" class="card-img-top" alt="Image of @v.Make @v.Model in @v.Colour">
+            <div class="card-body">
+                <h5 class="card-title">@v.Make </h5>
+                <p class="card-text">@v.Model</p>
+            </div>
         
-               <td>@v.Id</td>
-               <td>@v.Make</td>
-               <td>@v.Model</td>
-               <td>@v.RegDate.Year</td>
-               <td>@v.FuelType</td>
-               
-               <td>
-                   <!-- Image -->
-                   <img src="@v.Photo" class="img-fluid rounded mx-auto d-block img-table" alt="Image of @v.Make @v.Model in @v.Colour">
-               </td>
-               <td >
-                   
-                   <!-- Function Buttons --> 
-                   <div class="row">
-                    <div class="col-1"><a class="material-icons p-1" asp-action="Details" asp-route-id=@v.Id>short_text</a></div>
-                    <div class="col-1"><a class="material-icons p-1" asp-action="Edit" asp-route-id="@v.Id">create</a></div>
-                    <div class="col-1"><a class="material-icons p-1" asp-action="Delete" asp-route-id="@v.Id">remove_circle_outline</a></div>
-                   </div>
-               </td>
-            </tr>
-        }
-    </tbody>
-</table>
+            <div class="card-body">
+                
+                    <p><b>Year:</b> @v.RegDate.Year </p>
+                    <p><b>Fuel Type:</b> @v.FuelType </p>
+                    <p><b>Vehicle ID:</b> @v.Id </p>
+            </div>
+            <div class="card-footer">
+                <!-- Function Buttons --> 
+                <div class="row">
+                    <div class="col-4"><a class="material-icons p-1" asp-action="Details" asp-route-id=@v.Id>short_text</a> </div>
+                    <div class="col-4"><a class="material-icons p-1" asp-action="Edit" asp-route-id="@v.Id">create</a> </div>
+                    <div class="col-4"><a class="material-icons p-1" asp-action="Delete" asp-route-id="@v.Id">remove_circle_outline</a> </div>
+                </div>
+            </div>
+        </div>
+    
+    }
+</div>
