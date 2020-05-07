@@ -17,25 +17,27 @@
     <input class="form-control" type="hidden" asp-for="Vehicle">
 
     <div class="row">
-        <div class="col-6">
+        <div class="col-md-6">
             <div class="form-group">
             <label asp-for="VehicleID" class="control-label">Vehicle ID</label>
             <input class="form-control" type="text" placeholder="@Model.VehicleID" asp-for="VehicleID" readonly>
             </div>
         </div>
-    </div>
 
-    <div class="row">
         <!-- Carried Out By -->
-        <div class="col-3">
+        <div class="col-md-3">
             <div class="form-group">
             <label asp-for="CarriedOutBy" class="control-label">Carried Out By</label>
             <input asp-for="CarriedOutBy" class="form-control"/>
             <span asp-validation-for="CarriedOutBy" class="text-danger"></span>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        
         <!-- Date Of Service -->
-        <div class="col-3">
+        <div class="col-6 col-md-3">
             <div class="form-group">
             <label asp-for="DateOfService" class="control-label">Date of Service</label>
             <input asp-for="DateOfService" class="form-control" placeholder="yyyy/mm/dd" />
@@ -43,7 +45,7 @@
             </div>
         </div>
         <!-- Milage -->
-        <div class="col-3">
+        <div class="col-6 col-md-3">
             <div class="form-group">
             <label asp-for="CurrentMilage" class="control-label">Milage at Service</label>
             <input asp-for="CurrentMilage" class="form-control"/>
@@ -51,7 +53,7 @@
             </div>
         </div>
         <!-- Cost Of Service -->
-        <div class="col-3">
+        <div class="col-6 col-md-3">
             <div class="form-group">
             <label asp-for="Cost" class="control-label">Cost Of Service</label>
             <div class="input-group-prepend">
@@ -63,7 +65,7 @@
         </div>
     </div>
     <div class="row">
-        <div class="col-9">
+        <div class="col-12 col-md-9">
             <div class="form-group">
             <label asp-for="WorkDescription" class="control-label">Description Of Work Carried Out</label>
             <textarea asp-for="WorkDescription" class="form-control" rows="4"></textarea>
