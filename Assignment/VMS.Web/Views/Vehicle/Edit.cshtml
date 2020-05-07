@@ -18,7 +18,7 @@
         <div class="row">
         
             <!-- Make -->
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="form-group">
                 <label asp-for="Make" class="control-label"></label>
                 <input asp-for="Make" class="form-control"/>
@@ -26,43 +26,27 @@
                 </div>
             </div>
             <!-- Model -->
-            <div class="col-4">
+            <div class="col-md-4">
                 <div class="form-group">
                 <label asp-for="Model" class="control-label"></label>
                 <input asp-for="Model" class="form-control"/>
                 <span asp-validation-for="Model" class="text-danger"></span>
                 </div>
             </div>
-            <!-- Fuel Type -->
-            <div class="col-4">
-                <div class="form-group">
-                <label asp-for="FuelType" class="control-label">Fuel Type</label>
-                <input asp-for="FuelType" class="form-control"/>
-                <span asp-validation-for="FuelType" class="text-danger"></span>
-                </div>
-            </div>
-
-        </div>
-
-        <div class="row">
-            <!-- Colour -->
-            <div class="col-4">
+             <!-- Colour -->
+            <div class="col-md-4">
                 <div class="form-group">
                 <label asp-for="Colour" class="control-label"></label>
                 <input asp-for="Colour" class="form-control"/>
                 <span asp-validation-for="Colour" class="text-danger"></span>
                 </div>
             </div>
-            <!-- RegDate -->
-            <div class="col-4">
-                <div class="form-group">
-                <label asp-for="RegDate" class="control-label">Date of Registration</label>
-                <input asp-for="RegDate" class="form-control"/>
-                <span asp-validation-for="RegDate" class="text-danger"></span>
-                </div>
-            </div>
-            <!-- RegNumber -->
-            <div class="col-4">
+
+        </div>
+
+        <div class="row">
+           <!-- RegNumber -->
+            <div class="col-md-4">
                 <div class="form-group">
                 <label asp-for="RegNumber" class="control-label">Registration Number</label>
                 <input asp-for="RegNumber" class="form-control"/>
@@ -70,18 +54,39 @@
                 </div>
             </div>
 
-        </div>
-        <div class="row">
+            <!-- Fuel Type -->
+            <div class="col-md-4">
+                <div class="form-group">
+                <label asp-for="FuelType" class="control-label">Fuel Type</label>
+                <input asp-for="FuelType" class="form-control"/>
+                <span asp-validation-for="FuelType" class="text-danger"></span>
+                </div>
+            </div>
+
             <!-- Transmission Type -->
-            <div class="col-3">
+            <div class="col-md-4">
                 <div class="form-group">
                 <label asp-for="TransmissionType" class="control-label">Transmission Type</label>
                 <input asp-for="TransmissionType" class="form-control"/>
                 <span asp-validation-for="TransmissionType" class="text-danger"></span>
                 </div>
             </div>
+            
+            
+
+        </div>
+        <div class="row">
+            <!-- RegDate -->
+            <div class="col-6 col-md-3">
+                <div class="form-group">
+                <label asp-for="RegDate" class="control-label">Date of Registration</label>
+                <input asp-for="RegDate" class="form-control"/>
+                <span asp-validation-for="RegDate" class="text-danger"></span>
+                </div>
+            </div>
+
             <!-- CO2 Rating -->
-            <div class="col-3">
+            <div class="col-6 col-md-3">
                 <div class="form-group">
                 <label asp-for="CO2Rating" class="control-label">CO2 Rating</label>
                 <input asp-for="CO2Rating" class="form-control"/>
@@ -89,7 +94,7 @@
                 </div>
             </div>
             <!-- Body Type -->
-            <div class="col-3">
+            <div class="col-6 col-md-3">
                 <div class="form-group">
                 <label asp-for="BodyType" class="control-label">Body Type</label>
                 <input asp-for="BodyType" class="form-control"/>
@@ -97,7 +102,7 @@
                 </div>
             </div>
             <!-- Doors -->
-            <div class="col-3">
+            <div class="col-6 col-md-3">
                 <div class="form-group">
                 <label asp-for="Doors" class="control-label"></label>
                 <input asp-for="Doors" class="form-control"/>
@@ -107,7 +112,7 @@
         </div>
         <div class="row">
         <!-- Photo -->
-        <div class="col-6">
+        <div class="col-12 col-md-6">
                 <div class="form-group">
                 <label asp-for="Photo" class="control-label"></label>
                 <input asp-for="Photo" class="form-control"/>
