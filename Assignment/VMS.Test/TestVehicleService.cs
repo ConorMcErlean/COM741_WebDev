@@ -250,7 +250,8 @@ namespace VMS.Test
             Make = "AAA",
             Model = "ZZZ",
             RegDate = new DateTime(02/02/2002),
-            RegNumber = "ABC"
+            RegNumber = "ABC",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v1);
 
@@ -258,7 +259,8 @@ namespace VMS.Test
             Make = "BBB",
             Model = "YYY",
             RegDate = new DateTime(01/01/2001),
-            RegNumber = "DEF"
+            RegNumber = "DEF",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v2);
 
@@ -266,7 +268,8 @@ namespace VMS.Test
             Make = "CCC",
             Model = "XXX",
             RegDate = new DateTime(03/03/2003),
-            RegNumber = "GHI"
+            RegNumber = "GHI",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v3);
     
@@ -288,7 +291,8 @@ namespace VMS.Test
             Make = "AAA",
             Model = "ZZZ",
             RegDate = new DateTime(02/02/2002),
-            RegNumber = "ABC"
+            RegNumber = "ABC",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v1);
 
@@ -296,7 +300,8 @@ namespace VMS.Test
             Make = "BBB",
             Model = "YYY",
             RegDate = new DateTime(01/01/2001),
-            RegNumber = "DEF"
+            RegNumber = "DEF",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v2);
 
@@ -304,7 +309,8 @@ namespace VMS.Test
             Make = "CCC",
             Model = "XXX",
             RegDate = new DateTime(03/03/2003),
-            RegNumber = "GHI"
+            RegNumber = "GHI",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v3);
     
@@ -326,7 +332,8 @@ namespace VMS.Test
             Make = "AAA",
             Model = "ZZZ",
             RegDate = new DateTime(02/02/2002),
-            RegNumber = "ABC"
+            RegNumber = "ABC",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v1);
 
@@ -334,7 +341,8 @@ namespace VMS.Test
             Make = "BBB",
             Model = "YYY",
             RegDate = new DateTime(01/01/2001),
-            RegNumber = "DEF"
+            RegNumber = "DEF",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v2);
 
@@ -342,7 +350,8 @@ namespace VMS.Test
             Make = "CCC",
             Model = "XXX",
             RegDate = new DateTime(03/03/2003),
-            RegNumber = "GHI"
+            RegNumber = "GHI",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v3);
     
@@ -364,7 +373,8 @@ namespace VMS.Test
             Make = "AAA",
             Model = "ZZZ",
             RegDate = new DateTime(2002,02,02),
-            RegNumber = "ABC"
+            RegNumber = "ABC",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v1);
 
@@ -372,7 +382,8 @@ namespace VMS.Test
             Make = "BBB",
             Model = "YYY",
             RegDate = new DateTime(2001,01,01),
-            RegNumber = "DEF"
+            RegNumber = "DEF",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v2);
 
@@ -380,7 +391,8 @@ namespace VMS.Test
             Make = "CCC",
             Model = "XXX",
             RegDate = new DateTime(2003,03,03),
-            RegNumber = "GHI"
+            RegNumber = "GHI",
+            FuelType = "VVV"
         };
     svc.AddVehicle(v3);
     
