@@ -34,31 +34,32 @@
 </br>
 
 <!-- List of Cards -->
-<div class="card-columns">
+<div class="row row-cols-1 row-cols-md-3">
     @foreach (var v in Model)
     {
-        <div class="card" style="width: 18rem;">
-            <img src="@v.Photo" class="card-img-top" alt="Image of @v.Make @v.Model in @v.Colour">
-            <div class="card-body">
-                <h5 class="card-title">@v.Make </h5>
-                <p class="card-text">@v.Model</p>
-            </div>
-        
-            <div class="card-body">
-                
-                    <p><b>Year:</b> @v.RegDate.Year </p>
-                    <p><b>Fuel Type:</b> @v.FuelType </p>
-                    <p><b>Vehicle ID:</b> @v.Id </p>
-            </div>
-            <div class="card-footer">
-                <!-- Function Buttons --> 
-                <div class="row">
-                    <div class="col-4"><a class="material-icons p-1" asp-action="Details" asp-route-id=@v.Id>short_text</a> </div>
-                    <div class="col-4"><a class="material-icons p-1" asp-action="Edit" asp-route-id="@v.Id">create</a> </div>
-                    <div class="col-4"><a class="material-icons p-1" asp-action="Delete" asp-route-id="@v.Id">remove_circle_outline</a> </div>
+        <div class="col mb-4">
+            <div class="card mx-auto" style="width: 18rem;" >
+                <img src="@v.Photo" class="card-img-top" alt="Image of @v.Make @v.Model in @v.Colour">
+                <div class="card-body">
+                    <h5 class="card-title">@v.Make </h5>
+                    <p class="card-text">@v.Model</p>
+                </div>
+            
+                <div class="card-body">
+                    
+                        <p><b>Year:</b> @v.RegDate.Year </p>
+                        <p><b>Fuel Type:</b> @v.FuelType </p>
+                        <p><b>Vehicle ID:</b> @v.Id </p>
+                </div>
+                <div class="card-footer">
+                    <!-- Function Buttons --> 
+                    <div class="row">
+                        <div class="col-4"><a class="material-icons p-1" asp-action="Details" asp-route-id=@v.Id>short_text</a> </div>
+                        <div class="col-4"><a class="material-icons p-1" asp-action="Edit" asp-route-id="@v.Id">create</a> </div>
+                        <div class="col-4"><a class="material-icons p-1" asp-action="Delete" asp-route-id="@v.Id">remove_circle_outline</a> </div>
+                    </div>
                 </div>
             </div>
         </div>
-    
     }
 </div>
