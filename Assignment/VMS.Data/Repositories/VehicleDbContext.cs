@@ -23,10 +23,12 @@ namespace VMS.Data.Repositories
         {
             optionsBuilder.UseSqlite("Filename=data.db")
             /* Optional Logging (Comment in/out based on need) */
+
             // .UseLoggerFactory( new ServiceCollection ()
             //                     .AddLogging(builder => builder.AddConsole())
             //                     .BuildServiceProvider
             //                     .GetService<ILoggerFactory>())
+            
             /* End of Optional Logging */
             ;
         }
