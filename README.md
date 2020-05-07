@@ -20,4 +20,4 @@ The Coursework project is primarily built by myself, so is likely the strongest 
 6.	~~Delete an existing Vehicle (selected by Id) and its related service records~~
 7.	~~Add/delete a service record to/from the currently selected Vehicle~~
 8.	~~Providing suitable validation when creating/editing a Vehicle or adding a Service record.~~
-9.	Ensure the application utilises best practice in user experience design (UX) and employs a responsive UI that will work across a range of devices.
+9.	~~Ensure the application utilises best practice in user experience design (UX) and employs a responsive UI that will work across a range of devices.~~
