@@ -38,10 +38,15 @@ namespace VMS.Web.ViewModels
         public string BodyType {get; set;}
 
         public int Doors {get; set;}
-
+        
+        [DataType(DataType.ImageUrl)]
         public string Photo {get; set;}
 
-        public VehicleViewModel(){}
+        public VehicleViewModel()
+        {
+            // Default Value for View Model
+            RegDate = DateTime.Now;
+        }
         public void FromVehicle (Vehicle v)
         {
             Id = v.Id;

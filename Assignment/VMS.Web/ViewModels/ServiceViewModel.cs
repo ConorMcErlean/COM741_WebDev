@@ -16,6 +16,7 @@ namespace VMS.Web.ViewModels
         public string CarriedOutBy { get; set;}
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime DateOfService { get; set;}
     
         [Required]
@@ -27,6 +28,11 @@ namespace VMS.Web.ViewModels
 
         public int VehicleID { get; set;}
     
+        public ServiceViewModel()
+        {
+            // Default Value for View Model
+            DateOfService = DateTime.Now;
+        }
         public Service ToService()
         {
             var s = new Service
