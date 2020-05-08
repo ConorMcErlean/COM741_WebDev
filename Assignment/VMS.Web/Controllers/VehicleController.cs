@@ -59,8 +59,16 @@ namespace VMS.Web.Controllers
             if (ModelState.IsValid)
             {
                 var v = vvm.ToVehicle();
-                svc.AddVehicle(v);
-                Alert("Vehicle Created!", AlertType.success);
+                var ok = svc.AddVehicle(v);
+                if (ok == null)
+                {
+                    Alert("Vehicle Registration Already Used", AlertType.warning);
+                }
+                else
+                {
+                    Alert("Vehicle Created!", AlertType.success);
+                }
+                
                 return RedirectToAction(nameof(Index));
             }
             return View(vvm);

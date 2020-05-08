@@ -34,3 +34,11 @@
     </tbody>
 </table>
 
+ @if (Model.Services.Count < 1)
+        {
+            <div>
+                <h2>This Vehicle has not been serviced. </h2>
+                <a class="btn btn-primary mb-3" asp-action="AddService">Add a Service Record</a>
+            </div>
+        }
+

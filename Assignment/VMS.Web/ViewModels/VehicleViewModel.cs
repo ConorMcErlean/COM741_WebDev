@@ -24,7 +24,7 @@ namespace VMS.Web.ViewModels
         [Required]
         [DataType(DataType.Date)]
         public DateTime RegDate {get; set;}
-
+        [Required]
         public string RegNumber {get; set;}
 
         public string TransmissionType {get; set;}
