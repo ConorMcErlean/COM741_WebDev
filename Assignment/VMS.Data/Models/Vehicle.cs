@@ -7,16 +7,18 @@ namespace VMS.Data.Models
 {      
     public class Vehicle
     {
-        // Primary Key
         public int Id {get; set;}
-        [Required]
+
         public string Make {get; set;}
-        [Required]
+
         public string Model {get; set;}
+
         public string Colour { get; set;}
-        [Required]
+
         public DateTime RegDate {get; set;}
+
         public string RegNumber {get; set;}
+
         // Age will set a private variable based on RegDate
         private int _age;
         public int Age 
@@ -26,15 +28,21 @@ namespace VMS.Data.Models
                     return _age;
                  }
         }// age
+
         public string TransmissionType {get; set;}
-        [Range(0, 300)]
+
         public int CO2Rating {get; set;}
-        [Required]
+
         public string FuelType {get; set;}
+
         public string BodyType {get; set;}
+
         public int Doors {get; set;}
+
         public string Photo {get; set;}
 
+        // Service List for Vehicle, each Vehicle can have many
+        // Services.
         public IList<Service> Services { get; set;}
     }// Vehicle Class
 }
