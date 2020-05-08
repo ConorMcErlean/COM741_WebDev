@@ -1,4 +1,4 @@
-@model Service
+@model ServiceViewModel
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -14,7 +14,6 @@
 <form asp-action="AddService">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <!-- <input class="form-control" type="hidden" asp-for="VehicleID"> -->
-    <input class="form-control" type="hidden" asp-for="Vehicle">
 
     <div class="row">
         <div class="col-md-6">

@@ -47,28 +47,32 @@ namespace VMS.Web.Controllers
         // Get / Vehicle/Create
         public IActionResult Create()
         {
+            var vvm = new VehicleViewModel();
             // Render Form
-            return View();
+            return View(vvm);
         }
 
         // Post /Vehicle/Create
         [HttpPost]
-        public IActionResult Create(Vehicle v)
+        public IActionResult Create(VehicleViewModel vvm)
         {
             if (ModelState.IsValid)
             {
+                var v = vvm.ToVehicle();
                 svc.AddVehicle(v);
                 Alert("Vehicle Created!", AlertType.success);
                 return RedirectToAction(nameof(Index));
             }
-            return View(v);
+            return View(vvm);
         }
 
         // Get /Vehicle/Edit/{Id}
         public IActionResult Edit(int Id){
             var Vehicle = svc.GetVehicleById(Id);
             if (Vehicle != null){
-                return View(Vehicle);
+                var vvm = new VehicleViewModel();
+                vvm.FromVehicle(Vehicle);
+                return View(vvm);
             }
             Alert("Vehicle Not Found", AlertType.warning);
             return RedirectToAction(nameof(Index));
@@ -76,16 +80,17 @@ namespace VMS.Web.Controllers
 
         // Post /Vehicle/Edit/{Id}
         [HttpPost]
-        public IActionResult Edit(int id, Vehicle v)
+        public IActionResult Edit(int id, VehicleViewModel vvm)
         {
             if (ModelState.IsValid)
             {
+                var v = vvm.ToVehicle();
                 svc.UpdateVehicle(id, v);
                 // RedirectToAction("Details", new {id = v.Id});
                 Alert("Vehicle Updated", AlertType.success);
                 return RedirectToAction(nameof(Index));
             }
-            return View(v);
+            return View(vvm);
         }
 
         // Get /Vehicle/Delete/{Id}
@@ -113,25 +118,26 @@ namespace VMS.Web.Controllers
         // Get /Vehicle/AddService/{VehicleID}
         public IActionResult AddService(int VehicleId)
         {
-            var s = new Service{VehicleID = VehicleId};
+            var svm = new ServiceViewModel{VehicleID = VehicleId};
             // Return Form with ViewModel
-            return View(s);
+            return View(svm);
         }
 
         // Post /Vehicle/AddService/{VehicleId}
         [HttpPost]
-        public IActionResult AddService(Service s)
+        public IActionResult AddService(ServiceViewModel svm)
         {
             if (ModelState.IsValid)
             {
-                /* Had issues with vehicle being passed as part of the service,
-                below code corrects that issue */
+
+                /* Convert Service View Model to Service & attach Vehicle */
+                var s = svm.ToService();
                 s.Vehicle = svc.GetVehicleById(s.VehicleID);
                 svc.AddService(s);
                 Alert("Service Created", AlertType.success);
                 return RedirectToAction("Details", new {id = s.VehicleID});
             }
-            return View(s);
+            return View(svm);
         }
 
         // Get Vehicle/DeleteService
