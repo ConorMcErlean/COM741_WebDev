@@ -3,6 +3,7 @@ using VMS.Data.Models;
 
 namespace VMS.Data.Services
 {
+    /* Interface containing required project methods */
     public interface IVehicleService
     {
         // initialise the database

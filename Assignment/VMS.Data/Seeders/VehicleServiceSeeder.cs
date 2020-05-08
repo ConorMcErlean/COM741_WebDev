@@ -1,7 +1,8 @@
 using System;
 using VMS.Data.Models;
+using VMS.Data.Services;
 
-namespace VMS.Data.Services
+namespace VMS.Data.Seeders
 {
     public static class VehicleServiceSeeder
     {

@@ -96,7 +96,8 @@ namespace VMS.Web.Controllers
                 Alert("Vehicle Not Found", AlertType.warning);
                 return RedirectToAction(nameof(Index));
             }
-            Alert("Vehicle will Be permanently deleted, are you sure?", AlertType.danger);
+            Alert("Vehicle will Be permanently deleted, are you sure?", 
+                AlertType.danger);
             return View(vehicle);
         }
 
@@ -123,6 +124,8 @@ namespace VMS.Web.Controllers
         {
             if (ModelState.IsValid)
             {
+                /* Had issues with vehicle being passed as part of the service,
+                below code corrects that issue */
                 s.Vehicle = svc.GetVehicleById(s.VehicleID);
                 svc.AddService(s);
                 Alert("Service Created", AlertType.success);
@@ -142,7 +145,8 @@ namespace VMS.Web.Controllers
                 // Should Be Details
                 //return NotFound();
             }
-            Alert("Service will be permanently deleted. Are you sure?", AlertType.danger);
+            Alert("Service will be permanently deleted. Are you sure?", 
+                AlertType.danger);
             return View(Service);
         }
 

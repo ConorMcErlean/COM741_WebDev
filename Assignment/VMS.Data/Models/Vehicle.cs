@@ -22,6 +22,7 @@ namespace VMS.Data.Models
         public string Colour { get; set;}
 
         [Required]
+        [DataType(DataType.Date)]
         public DateTime RegDate {get; set;}
 
         public string RegNumber {get; set;}
