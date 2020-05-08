@@ -11,13 +11,10 @@ namespace VMS.Data.Models
         // Primary Key
         public int ServiceId { get; set;}
 
-        [Required]
         public string CarriedOutBy { get; set;}
 
-        [Required]
         public DateTime DateOfService { get; set;}
     
-        [Required]
         public string WorkDescription{ get; set;}
 
         public int CurrentMilage{ get; set;}

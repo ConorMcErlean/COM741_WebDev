@@ -1,4 +1,4 @@
-@model Vehicle
+@model VehicleViewModel
 
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
@@ -58,7 +58,14 @@
             <div class="col-md-4">
                 <div class="form-group">
                 <label asp-for="FuelType" class="control-label">Fuel Type</label>
-                <input asp-for="FuelType" class="form-control"/>
+                <select asp-for="FuelType" class="form-control">
+                    <option>Petrol</option>
+                    <option>Diesel</option>
+                    <option>Electric</option>
+                    <option>Hybrid</option>
+                    <option>Hydrogen</option>
+                    <option>Other</option>
+                </select>
                 <span asp-validation-for="FuelType" class="text-danger"></span>
                 </div>
             </div>
@@ -67,11 +74,14 @@
             <div class="col-md-4">
                 <div class="form-group">
                 <label asp-for="TransmissionType" class="control-label">Transmission Type</label>
-                <input asp-for="TransmissionType" class="form-control"/>
+                <select asp-for="TransmissionType" class="form-control">
+                    <option>Manual</option>
+                    <option>Automatic</option>
+                    <option>Other</option>
+                </select>
                 <span asp-validation-for="TransmissionType" class="text-danger"></span>
                 </div>
             </div>
-            
             
 
         </div>
